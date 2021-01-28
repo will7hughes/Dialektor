@@ -43,12 +43,22 @@ As usual, start with a git clone, <br>
 ```bash
 git clone https://github.com/yasharAhari/Dialektor.git
 ```
-go to the ```Dialektor_``` directory by typing
-```bash
-ls Dialektor_
+go to the ```Dialektor_``` directory and run the following commands:<br>
+#### Activate virtual python environment
+Windows:
 ```
-and run the following command:<br>
- 
+venv\Scripts\activate.bat
+```
+#### Install requirements
+Make sure you are invoking pip with python3 and not python 2.7<br>
+Depending on how you have setup pip, you can use pip3 to invoke as python3<br>
+I choose to be extra verbose and specify with the below command<br>
+Windows:
+```
+python3 -m pip install -r requirements.txt
+```
+
+#### Start Development Local Server
 Windows:
 ```cmd
 python manage.py runserver
@@ -59,16 +69,15 @@ linux
 chmod +x manage.py 
 ./manage.py runserver
 ```
-
-you can also run tests 
-```bash
-python manage.py test
-```
-
 After this step the Development server will start working. 
 You should be able to see the website on 
 [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
+
+#### Run Unit Tests
+```bash
+python manage.py test
+```
 
 #### Deployment on google cloud:
 Each time after few feature implemented, I will be updating it to the Google cloud.

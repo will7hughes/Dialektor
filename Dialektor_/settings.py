@@ -80,9 +80,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'HOST': '127.0.0.1',
         'PORT': '5432',
-        'NAME': 'dialekt-users',
-        'USER': 'dialekt-app',
-        'PASSWORD': 'GpsLoGKmOOFi5JEi'
+        'NAME': 'dialektorlocaldb',
+        'USER': 'dialektoruser',
+        'PASSWORD': 'password'
     }
 }
 
@@ -139,7 +139,7 @@ AUTH_USER_MODEL = "dialektor.CustomUser"
 
 # Settings for google cloud storage
 DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
-GS_BUCKET_NAME = 'dialekt_storage'
-GS_PROJECT_ID = '240407835645'
+GS_BUCKET_NAME = 'dialektor_storage'
+GS_PROJECT_ID = 'dialektor-302923'
 GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
-    "./dialektor/GS_Credentials/dialekt-21418024ba66.json")
+    "./dialektor/GS_Credentials/Dialektor-0b847ed5c0ab.json")
