@@ -1,49 +1,10 @@
-# Dialektor
-Group APYZ CS 4263 Software Engineering Capstone project
-
-Under supervision of:<br> 
-Dr. Rafal Jabrzemski
-
-TEAM: APYZ
-
-Adam Gracy<br>
-Phillip Voss<br>
-Yashar G. Ahari<br>
-Zachary Arani<br>
-
-[what is Dialektor](./Documentation/Dialektor.md)
-
-### Version info
-Currently ~~running~~ version on google cloud: Beta-0 
-[dialekt.appspot.com_version_Beta-0](https://dialekt.appspot.com/)
-
-About Version Beta-0:<br>
-Beta-0 is the almost finished version of the final product, lacking the final cosmetic touches and the researchers page and functionality. The sound recording, playback, storage, profile, collection all functional. 
-
-### Important notes: 
-
-#### A word about google cloud 
-You may notice there are 3 files that are not part of a usual 
-Django app. 
-1. app.yaml <br>
-This files contains the configuration to run the app in google cloud app engine.
-2. requirements.txt <br> 
-This is the file that can get by ```pip freeze > requirements.txt```. Contains all the project python dependencies.
-Google cloud will look for this file and install all the listed packages.
-3. main.py <br>
-Google app engine looks for this file to starts the our application. In this file, we just restate our 
-wsgi choice. 
-
-This is a great article about the process:<br>
-[Deploying a Django Application to Google App Engine](https://medium.com/@BennettGarner/deploying-a-django-application-to-google-app-engine-f9c91a30bd35)
-
 #### Installation and running locally
 
 As usual, start with a git clone, <br>
 ```bash
 git clone https://github.com/yasharAhari/Dialektor.git
 ```
-go to the ```Dialektor_``` directory and run the following commands:<br>
+go to the ```Dialektor``` directory and run the following commands:<br>
 #### Activate virtual python environment
 Windows:
 ```
@@ -88,7 +49,53 @@ this link:
 
 [Deploying a Django Application to Google App Engine](https://medium.com/@BennettGarner/deploying-a-django-application-to-google-app-engine-f9c91a30bd35)
 
+# Dialektor Development Team
+Group APYZ CS 4263 Software Engineering Capstone Project
+Group 11 CS 4273 Software Engineering Capstone Project
 
+Under supervision of:<br> 
+Dr. Rafal Jabrzemski
+
+TEAM: APYZ
+
+Adam Gracy<br>
+Phillip Voss<br>
+Yashar G. Ahari<br>
+Zachary Arani<br>
+
+TEAM: 11
+
+Will Hughes<br>
+Lieu Dean<br>
+Jason Myers<br>
+
+[what is Dialektor](./Documentation/Dialektor.md)
+
+### Version Info
+Current version on Google Cloud: Beta-0 
+[dialekt.appspot.com_version_Beta-0](https://dialekt.appspot.com/)
+
+About Version Beta-0:<br>
+Beta-0 is the almost finished version of the final product, lacking the final cosmetic touches and the researchers page and functionality. The sound recording, playback, storage, profile, collection all functional. 
+
+Next version: 1.0.0
+
+### Important notes: 
+
+#### Google Cloud
+You may notice there are 3 files that are not part of a usual 
+Django app. 
+1. app.yaml <br>
+This files contains the configuration to run the app in google cloud app engine.
+2. requirements.txt <br> 
+This is the file that can get by ```pip freeze > requirements.txt```. Contains all the project python dependencies.
+Google cloud will look for this file and install all the listed packages.
+3. main.py <br>
+Google app engine looks for this file to starts the our application. In this file, we just restate our 
+wsgi choice. 
+
+This is a great article about the process:<br>
+[Deploying a Django Application to Google App Engine](https://medium.com/@BennettGarner/deploying-a-django-application-to-google-app-engine-f9c91a30bd35)
 
 
 
