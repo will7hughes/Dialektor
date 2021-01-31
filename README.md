@@ -1,8 +1,8 @@
 ## Installation and Setup
 
 As usual, start with a git clone, <br>
-```bash
-git clone https://github.com/yasharAhari/Dialektor.git
+```
+git clone https://github.com/will7hughes/Dialektor.git
 ```
 ### Setup Docker for Local Development
 To understand the decision to use Docker for our development environment. Read this article: https://www.untangled.dev/2020/05/30/why-docker-local-development/ <br>
