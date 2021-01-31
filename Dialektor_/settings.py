@@ -73,7 +73,19 @@ WSGI_APPLICATION = 'Dialektor_.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-if DEBUG:
+if os.getenv('GAE_APPLICATION', None):
+	# Running production, connect to GCP instance of PostgreSQL running in CloudSQL
+	# This is a centralized production environment 
+	DATABASES = {
+		'default': {
+			'ENGINE': config('PRODUCTION_ENGINE'),
+			'HOST': config('PRODUCTION_HOST'),
+			'NAME': config('PRODUCTION_DB_NAME'),
+			'USER': config('PRODUCTION_USERNAME'),
+			'PASSWORD': config('PRODUCTION_PASSWORD')
+		}
+	}
+else:
 	# Running development, connect to local PostgreSQL in our db Docker container
 	# You must setup the database 'dialektorlocaldb' and user 'dialektoruser' in your db Docker container
 	# Note that our Django app runs in the web Docker container, which is why our host is 'db' and not 'localhost'
@@ -88,19 +100,6 @@ if DEBUG:
 			'PASSWORD': 'password'
 		}
 	}
-else:
-	# Running production, connect to GCP instance of PostgreSQL running in CloudSQL
-	# This is a centralized production environment 
-	DATABASES = {
-		'default': {
-			'ENGINE': config('PRODUCTION_ENGINE'),
-			'HOST': config('PRODUCTION_HOST'),
-			'NAME': config('PRODUCTION_DB_NAME'),
-			'USER': config('PRODUCTION_USERNAME'),
-			'PASSWORD': config('PRODUCTION_PASSWORD')
-		}
-	}
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
