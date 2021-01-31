@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "djangokubernetes-303405",
+  "private_key_id": "16ef976ca0bc5fa518048d6dbbe3c9923e8dc26d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDIohqh8UUqkuao\n7g35FGuhw3YIdBJwb1bEMLIf2GiVzktk6WpjhJByvA+cOpfVUqZcuFgMLW58X8aG\np+h+mGsZqvs5bHloRYexsKgferBnXMmbmGo3Yg74g1gf7VhFylKckMwswrFSFa+n\nUmdMm9CPoN/JrhSeWuZXgTF68Wk86dkaVahd4mevHCsJrK30lmsDOok4w78tcjvX\noxOIj+lv1ClM9LxoaPAWyGlmaB0bqXH8YgDAiW0MiAEeII9XuLeT2af2ApfVg8un\n4zfJEdL1SvB5uSWIbD13BV/YP9UoyvZkh+7E0YWWm7swbalzP8tTSirPRt0y/xzz\n5aE7T+qDAgMBAAECggEAD0P6R8keTKN5xm+6g3Gw0NGY+QKv5nsqPGpCG1cxefiE\n1wxFioXrIbe6blYs+E++Fb73ABIy3mbBKby73WoGeCEA1Xkx8aOctAHvgNmqc2rl\nch/SMR2WawU/XsqF1WWUDJKd3mf/6vF4eIA2GOegIlWIwYUrz3K2JQFQ/PxCWB6G\nNoPgYhixOb9Avpo8w5QXO9fnrdgDqPorAPuL7dce6MgIYkVnZE7WczW7qyDrWsGP\nO1w9QzB+qRQIPVVp3CyUSVMR6KMgtUNVKdgrdeKZCf7kQR2ZzZ7SOZH5WLmR+tG+\n6QCnGysgj4Gc3aE4n3D6uCqjeS8abe3ZAgChHACJhQKBgQD756xXmNtp0+KThZGX\nEPsd/JDlOm7lPrrb4nVADhD+1y+wAqdUz5NeT3+uRiXkAVI3sSaoWCY2nLYpj6RM\naMWWXpl90mUZTr9nY9rLnjLPWIiOUfqpPF83zieUZYC6MSLapltoWqk+Wwq3jMqr\n9e1nuHvpihQX7UuPoyHHlsv47wKBgQDL5Q74n2RpT6l8G8/2Uv5EBPyt/eKY1ecl\nea5vEOPCHuvtvH2GuRa7Bs5ltKYAIjnCjPjuuxtE76sq7/g1ZrM9p5A9qa8jEoI+\n4dSoVWBkLOv0cbr/qUaA7eGFYvBAZiA0CfjfcexUIzKINW8S6kHS+fGEdLvj5ONg\njlAgj2hfrQKBgQCkn0F8uZNidKsUt2xu6hUCAsV6WJaSUE1zV2pCoy6uLFio0QMj\npMftEU0iygsHF2nwpV/bEkhe1kkhnhLEMJA39bifhni1ckYZviMFgGw6HuSXBbIn\nGSIs6Rfqne7jPytE8wS3jNAfxQWa8HKesIgmiWTJOYhqHpSL2RNBSSYhlwKBgEbp\nhlhvzxNVUmPIpH5OBQKRHXRB7XIsSrTc6g7Ut/HGoVVQjfOyIbawOk5jEqzPOnlw\nYA9fYa+LD2Pii9e+vS3/PgpEHpY7FLNcBYL6FokgmnusplXOgKfMk/e5Hke3fRG8\nOiM0UvY8O5Hly5ivgm8m4Jmpo8Mx0ua8+B8q4SkNAoGABTyiM9Pk5p+WV2TGo42D\nHrnk3/qphNWOVv2Dy8l/0A9AiCz/3jEhTZmmRZG4koG7f0Rk6CgnSlLM6WenWm5o\ne0Ri7Ky0FvZnYPEPIusvy1l1YWq+EEsdow6z4X7VgpSiY2EYf/NRpfxIJytN0nJy\nmNoy9eljRGk6DO0ejVAyCME=\n-----END PRIVATE KEY-----\n",
+  "client_email": "djangokubernetes-303405@appspot.gserviceaccount.com",
+  "client_id": "114848927107653706206",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/djangokubernetes-303405%40appspot.gserviceaccount.com"
+}

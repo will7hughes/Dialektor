@@ -153,7 +153,7 @@ AUTH_USER_MODEL = "dialektor.CustomUser"
 
 # Settings for google cloud storage
 DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
-GS_BUCKET_NAME = 'dialektor_storage'
-GS_PROJECT_ID = 'dialektor-302923'
+GS_BUCKET_NAME = 'dialektor-static-bucket'
+GS_PROJECT_ID = 'djangokubernetes-303405'
 GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
-    "./dialektor/GS_Credentials/Dialektor-0b847ed5c0ab.json")
+    "./dialektor/GS_Credentials/Dialektor.json")
