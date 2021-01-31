@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from decouple import config
 from google.oauth2 import service_account
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -18,13 +19,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '7b7^dshdx=*&zval+53)z7vzzttfmvs=r2y@ec0ar-0oaw=ug_'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['dialekt.appspot.com',
+				'localhost',
                  '127.0.0.1',
                  '192.168.1.76']
 
@@ -56,8 +55,7 @@ ROOT_URLCONF = 'Dialektor_.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,16 +73,33 @@ WSGI_APPLICATION = 'Dialektor_.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-        'NAME': 'dialektorlocaldb',
-        'USER': 'dialektoruser',
-        'PASSWORD': 'password'
-    }
-}
+if DEBUG:
+	# Running development, connect to local PostgreSQL in our db Docker container
+	# You must setup the database 'dialektorlocaldb' and user 'dialektoruser' in your db Docker container
+	# Note that our Django app runs in the web Docker container, which is why our host is 'db' and not 'localhost'
+	# This is just a local database, so the password need not be complex :)
+	DATABASES = {
+		'default': {
+			'ENGINE': 'django.db.backends.postgresql_psycopg2',
+			'HOST': 'db',
+			'PORT': '5432',
+			'NAME': 'dialektorlocaldb',
+			'USER': 'dialektoruser',
+			'PASSWORD': 'password'
+		}
+	}
+else:
+	# Running production, connect to GCP instance of PostgreSQL running in CloudSQL
+	# This is a centralized production environment 
+	DATABASES = {
+		'default': {
+			'ENGINE': config('PRODUCTION_ENGINE'),
+			'HOST': config('PRODUCTION_HOST'),
+			'NAME': config('PRODUCTION_DB_NAME'),
+			'USER': config('PRODUCTION_USERNAME'),
+			'PASSWORD': config('PRODUCTION_PASSWORD')
+		}
+	}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
