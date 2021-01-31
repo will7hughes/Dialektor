@@ -1,10 +1,81 @@
-#### Installation and running locally
+## Installation and Setup
 
 As usual, start with a git clone, <br>
 ```bash
 git clone https://github.com/yasharAhari/Dialektor.git
 ```
-go to the ```Dialektor``` directory and run the following commands:<br>
+### Setup Docker for Local Development
+To understand the decision to use Docker for our development environment. Read this article: https://www.untangled.dev/2020/05/30/why-docker-local-development/ <br>
+Then, to get the basics of what Docker is, read this https://vsupalov.com/6-docker-basics/ <br>
+
+Install Docker Desktop: https://www.docker.com/products/docker-desktop <br>
+Follow installation prompts from docker desktop for extra configuration setup. For example, I had to copy/paste and run a powershell command for WSL. I also had to do step 4 from this site: https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package. <br>
+Restart your computer, if prompted to. <br>
+
+We will follow the setup tutorial here with slight modifications of database and user names. Below is the exact command list: https://www.untangled.dev/2020/06/06/docker-django-local-dev/ <br>
+
+Start up the contianer
+```
+docker-compose up
+```
+Verify that there are two containers up 
+```
+docker ps
+```
+Connect to the `db` docker container in a seperate terminal/powershell window
+```
+docker-compose exec db sh
+```
+Open `psql` as user `postgres`
+```
+su - postgres -c psql
+```
+Create the database
+```
+CREATE DATABASE dialektorlocaldb
+```
+Create the user
+```
+CREATE USER dialektoruser WITH PASSWORD 'password'
+```
+Setup user roles
+```
+ALTER ROLE dialektoruser SET client_encoding TO 'utf8'
+ALTER ROLE dialektoruser SET default_transaction_isolation TO 'read committed'
+ALTER ROLE dialektoruser SET timezone TO 'UTC'
+```
+Grant user privileges
+```
+GRANT ALL PRIVILEGES ON DATABASE dialektorlocaldb TO dialektoruser
+```
+The `db` docker container is now configured with a database named, `dialektorlocaldb` and a user, `dialektoruser`<br>
+We will now setup the `web` docker container<br>
+Exit `psql` and `db` docker OR open a new terminal\powershell<br>
+Exit `psql`
+```
+\q
+```
+Exit `db` container
+```
+exit
+```
+Enter the `web` container<br>
+```
+docker-compose exec web sh
+```
+Apply database migrations. This creates the tables defined in our django application and creates them in our PostgreSQL database we just configured.
+```
+python manage.py migrate
+```
+Create a superuser to login to the django admin console
+```
+python manage.py createsuperuser
+```
+You can now go to `http://localhost:8000/admin` and login with the superuser you created<br>
+If you forget your password. Just re-run the createsuper command above<br>
+You have now completely setup the development environment<br>
+
+# STOP The rest of the instructions are under revision
 #### Activate virtual python environment
 Windows:
 ```
