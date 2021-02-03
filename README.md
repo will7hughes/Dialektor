@@ -69,10 +69,10 @@ If you close Docker with `Ctrl+C` your VS Code window will disconnect<br>
 docker-compose up
 ```
 If you develop `without being connected` to the Docker you will have to rebuild the docker `web` container for changes to make effect<br>
-To rebuild `web` container run<br>
 Note that code changes take immediate effect when you save a file<br>
 If you write something that throws an error. You may have to develop locally, `without Docker`<br>
 Fix the error. And rebuild the `web` container<br>
+To rebuild `web` container run<br>
 ```
 docker-compose build web
 ```
