@@ -56,7 +56,11 @@ Create a superuser to login to the django admin console
 ```
 python manage.py createsuperuser
 ```
-You can now go to `http://localhost:8080/admin` and login with the superuser you created<br>
+Start django localhost website
+```
+python manage.py runserver
+```
+You can now go to `http://127.0.0.1:8000/admin` and login with the superuser you created<br>
 If you forget your password. Just re-run the createsuper command above<br>
 You have now completely setup the development environment<br>
 
@@ -85,7 +89,23 @@ Navigate to the folder<br>
 VS Code -> File -> Open Folder -> `/code/` -> Ok<br>
 You can now edit and develop right from VS Code as if you were on your local machine<br>
 Make sure that you are connected to the `Container` by looking at the bottom left green area <br>
-It should say `Container dialektor_web (/web)`<br>
+It should say `Container dialektor_web (/web)`<br><br>
+
+Connect to VS Code terminal to startup localhost django website<br>
+VS Code -> Terminal -> New Terminal<br>
+Change directory
+```
+cd code
+```
+Start localhost development website
+```
+python manage.py runserver
+```
+You can now go to http://127.0.0.1:8000 to view your localhost website while you develop<br>
+You can shutdown the website by going to the console and using the key combination
+```
+Ctr + C
+```
 
 ## Development Lifecyle
 Create a feature branch<br>
