@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+<script src="/static/script.js"></script>
+<div id="content">
+  <div id="options">
+    <div id="smallRec"></div>
+  </div>
+  <div id="recorder">
+    <div id="rec"></div>
+    <div id="pause"></div>
+    <div id="playPause"></div>
+    <div id="stop"></div>
+    <div id="start"></div>
+  </div>
+  <p id="time">0:00</p>
+  <div id="bar">
+    <div id="progress"></div>
+  </div>
+  <div id="form-container">
+    <div id="data">
+      <div action="/upload" method="post" id="data-form"> {% csrf_token %}
+        <input type="text" name="length" id="length" />
+        <input type="text" name="title" id="title" placeholder="Title" />
+        <br>
+        <div id="container">
+          <div id="autocomplete"></div>
+          <input type="text" name="collection" id="collection" placeholder="Collection" />
+          <div id="add-collection">+</div>
+        </div>
+        <br>
+        <select name="category" id="category" placeholder="Category">
+            <option value="spoken">Spoken</option>
+            <option value="music">Music</option>
+            <option value="sfx">SFX</option>
+            <option value="misc">Misc</option>
+        </select>
+        <br>
+        <input type="text" name="tags" id="tags" placeholder="Tags" />
+        <br>
+        <div id="form-buttons">
+            <input type="button" name="save" id="save" value="Save" /><input type="button" name="discard" id="discard"
+          value="Discard" />
+        </div>
+      </form>
+    </div>
+    <div id="pic-box" hidden>
+      <img id="collection-pic" />
+    </div>
+    <input type="file" id="image-upload" accept="image/*" />
+  </div>
+  <!-- This script needs to be after everything -->
+  <script src="static/DialektRecorder.js"></script>
+  {% else %}
+  <div id="notLoggedIn">
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">login</a>
+    <br>
+    <a href="/signup">signup</a>
+  </div>
+  {% endif %}
+  {% endblock %}
