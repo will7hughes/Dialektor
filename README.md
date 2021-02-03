@@ -4,11 +4,16 @@ Version: 1.0.1<br>
 
 ## Setup Docker for Local Development
 
-As usual, start with a git clone, <br>
+As usual, start with a git clone <br>
 ```
 git clone https://github.com/will7hughes/Dialektor.git
 ```
-To understand the decision to use Docker for our development environment. Read this article: https://www.untangled.dev/2020/05/30/why-docker-local-development/ <br>
+Change directory to the Dialektor project
+```
+cd Dialektor
+```
+To understand the decision to use Docker for our development environment. <br>
+Read this article: https://www.untangled.dev/2020/05/30/why-docker-local-development/ <br>
 Then, to get the basics of what Docker is, read this https://vsupalov.com/6-docker-basics/ <br>
 
 Install Docker Desktop: https://www.docker.com/products/docker-desktop <br>
