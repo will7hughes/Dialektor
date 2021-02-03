@@ -16,13 +16,34 @@ from django.conf import settings
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import include, path
-
 from django.conf.urls.static import static
+import personal.views as views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('personal.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+	
+    path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('', views.index_home, name='home'),
+    path('signup/', views.signup),
+    path('signup/create_user', views.create_user),
+    path('upload', views.upload),
+    path('sounds/<str:sound_id>/', views.render_sound, name='render_sound'),
+    path('pic/<str:pic_id>/', views.get_picture, name="get pic"),
+    path('raw/<str:sound_id>/', views.get_sound, name="get_sound"),
+    path('download/<str:sound_id>/', views.download_sound, name="download_sound"),
+    path('profile/',views.profile, name="profile"),
+    path('userUpdateProfile/', views.profile_update, name="profile_update"),
+    path('changePassword/', views.change_pass, name="change_pass"),
+    path('collection/<str:collection_name>/', views.collection_list, name="collection_list"),
+    path('tag/<str:tag_name>/', views.tag_list, name="tag_list"),
+    path('profilePic/', views.get_profile_pic, name="get_profile_pic"),
+
+    path('collections', views.get_collections, name="get_collections"),
+
+    path('search', views.search, name="search")
+]
 
 # Only serve static files from Django during development
 # Use Google Cloud Storage or an alternative CDN for production
