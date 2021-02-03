@@ -63,9 +63,18 @@ You have now completely setup the development environment<br>
 ## Visual Studio Code Setup
 Download Here: https://code.visualstudio.com/download<br>
 Install Pluggin Remote - Containers: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers<br>
-Make sure Docker is running
+Make sure Docker is running<br>
+If you close Docker with `Ctrl+C` your VS Code window will disconnect<br>
 ```
 docker-compose up
+```
+If you develop `without being connected` to the Docker you will have to rebuild the docker `web` container for changes to make effect<br>
+To rebuild `web` container run<br>
+Note that code changes take immediate effect when you save a file<br>
+If you write something that throws an error. You may have to develop locally, `without Docker`<br>
+Fix the error. And rebuild the `web` container<br>
+```
+docker-compose build web
 ```
 Connect to the Docker Container in VS Code<br>
 VS Code -> View -> Command Palette -> `search` Attach -> Attach to Running Containers<br>
