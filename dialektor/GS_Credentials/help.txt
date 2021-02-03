@@ -1,1 +1,0 @@
-Add the google cloud json file in this directory.
