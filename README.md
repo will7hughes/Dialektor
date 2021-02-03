@@ -76,6 +76,7 @@ To rebuild `web` container run<br>
 ```
 docker-compose build web
 ```
+Once Docker is up and running and is not throwing any errors<br>
 Connect to the Docker Container in VS Code<br>
 VS Code -> View -> Command Palette -> `search` Attach -> Attach to Running Containers<br>
 It will then prompt you to select `db` or `web`<br>
