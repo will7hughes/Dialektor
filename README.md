@@ -60,6 +60,23 @@ You can now go to `http://localhost:8080/admin` and login with the superuser you
 If you forget your password. Just re-run the createsuper command above<br>
 You have now completely setup the development environment<br>
 
+## Visual Studio Code Setup
+Download Here: https://code.visualstudio.com/download
+Install Pluggin Remote - Containers: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
+Make sure Docker is running
+```
+docker-compose up
+```
+Connect to the Docker Container in VS Code<br>
+VS Code -> View -> Command Palette -> `search` Attach -> Attach to Running Containers<br>
+It will then prompt you to select `db` or `web`<br>
+Select `web`<br>
+Navigate to the folder<br>
+VS Code -> File -> Open Folder -> `/code/` -> Ok<br>
+You can now edit and develop right from VS Code as if you were on your local machine<br>
+Make sure that you are connected to the `Container` by looking at the bottom left green area <br>
+It should say `Container dialektor_web (/web)`<br>
+
 ## Development Lifecyle
 Create a feature branch<br>
 DO NOT WORK ON THE MASTER BRANCH ON YOUR LOCAL DEVELOPMENT!!!!!!!!!!!<br>
