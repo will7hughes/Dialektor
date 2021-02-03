@@ -18,6 +18,7 @@ For example, I had to copy/paste and run a `powershell command for WSL`. <br>
 I also had to do `step 4` from this site: https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package. <br>
 `Restart your computer`, if prompted to. <br>
 https://www.docker.com/products/docker-desktop <br>
+
 Create the container
 ```
 docker-compose create
