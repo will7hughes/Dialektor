@@ -109,6 +109,17 @@ else:
 			'PASSWORD': 'password'
 		}
 	}
+	# SQL Server Proxy to Production Migrations Only
+	# DATABASES = {
+	# 	'default': {
+	# 		'ENGINE': 'django.db.backends.postgresql',
+	# 		'NAME': 'dialektor',
+	# 		'USER': 'dialektor-user',
+	# 		'PASSWORD': 'fIiOyOu!HW@*',
+	# 		'HOST': '127.0.0.1',
+	# 		'PORT': '5432',
+	# 	}
+	# }
 # [END dbconfig]
 
 
@@ -154,7 +165,9 @@ USE_TZ = True
 # [END staticurl]
 if os.getenv('GAE_APPLICATION', None):
 	# Production Static Url
-	STATIC_ROOT = 'static/'
+	STATICFILES_DIRS = [
+		'https://storage.googleapis.com/dialektor-bucket/static/'
+	]
 	STATIC_URL = 'https://storage.googleapis.com/dialektor-bucket/static/'
 else:
 	# Development Static url

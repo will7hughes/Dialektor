@@ -2,7 +2,7 @@
 {% block title %}Profile{% endblock %}
 {% block content %}
 {% if user.is_authenticated %}
-<link rel="stylesheet" type="text/css" href="/static/profile.css">
+<link rel="stylesheet" href="{% static "profile.css" %}">
 <!-- This is the top level container, it holds all of the page contents below the nav bar.
         This is a flex container with vertical flex-direction, it is also a flex item to its parent  -->
         <div class="flex-container flex-direction-vertical" id="top-level-flexcontainer">

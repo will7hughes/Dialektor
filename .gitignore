@@ -3,6 +3,9 @@ __pycache__/
 Lib/
 Scripts/
 pyvenv.cfg
+credentials.json
+cloud_sql_proxy
+cloud_sql_proxy.exe
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
