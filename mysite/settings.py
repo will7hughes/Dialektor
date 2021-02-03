@@ -25,7 +25,7 @@ SECRET_KEY = 'pf-@jxtojga)z+4s*uwbgjrq$aep62-thd0q7f&o77xtpka!_m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+PRODUCTION = True
 # SECURITY WARNING: If you deploy a Django app to production, make sure to set
 # an appropriate host here.
 # See https://docs.djangoproject.com/en/1.10/ref/settings/
@@ -81,13 +81,13 @@ AUTH_USER_MODEL = "personal.CustomUser"
 
 # [START dbconfig]
 
-if os.getenv('GAE_APPLICATION', None):
+if PRODUCTION:
 	# Running production, connect to GCP instance of PostgreSQL running in CloudSQL
 	# This is a centralized production environment 
 	DATABASES = {
 		'default': {
 			'ENGINE': 'django.db.backends.postgresql',
-			'NAME': 'polls',
+			'NAME': 'dialektor',
 			'USER': os.getenv('DATABASE_USER'),
 			'PASSWORD': os.getenv('DATABASE_PASSWORD'),
 			'HOST': '127.0.0.1',
@@ -95,11 +95,7 @@ if os.getenv('GAE_APPLICATION', None):
 		}
 	}
 else:
-	# Running development, connect to local PostgreSQL in our db Docker container
-	# You must setup the database 'dialektorlocaldb' and user 'dialektoruser' in your db Docker container
-	# Note that our Django app runs in the web Docker container, which is why our host is 'db' and not 'localhost'
-	# This is just a local database, so the password need not be complex :)
-	DATABASES = {
+    DATABASES = {
 		'default': {
 			'ENGINE': 'django.db.backends.postgresql_psycopg2',
 			'HOST': 'db',
@@ -109,6 +105,11 @@ else:
 			'PASSWORD': 'password'
 		}
 	}
+	# Running development, connect to local PostgreSQL in our db Docker container
+	# You must setup the database 'dialektorlocaldb' and user 'dialektoruser' in your db Docker container
+	# Note that our Django app runs in the web Docker container, which is why our host is 'db' and not 'localhost'
+	# This is just a local database, so the password need not be complex :)
+
 	# SQL Server Proxy to Production Migrations Only
 	# DATABASES = {
 	# 	'default': {
@@ -163,11 +164,9 @@ USE_TZ = True
 
 
 # [END staticurl]
-if os.getenv('GAE_APPLICATION', None):
+if PRODUCTION:
 	# Production Static Url
-	STATICFILES_DIRS = [
-		'https://storage.googleapis.com/dialektor-bucket/static/'
-	]
+	STATIC_ROOT = 'static/'
 	STATIC_URL = 'https://storage.googleapis.com/dialektor-bucket/static/'
 else:
 	# Development Static url
