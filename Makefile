@@ -19,14 +19,10 @@ build:
 
 .PHONY: push
 push: build
-	gcloud docker push -- gcr.io/$(GCLOUD_PROJECT)/dialektor
-
-.PHONY: template
-template:
-	sed -i ".tmpl" "s/\$$GCLOUD_PROJECT/$(GCLOUD_PROJECT)/g" deploy.yaml
+	docker push -- gcr.io/$(GCLOUD_PROJECT)/dialektor
 
 .PHONY: deploy
-deploy: push template
+deploy: push 
 	kubectl create -f deploy.yaml
 
 .PHONY: update
@@ -35,5 +31,5 @@ update:
 
 .PHONY: delete
 delete:
-	kubectl delete rc dialektor
+	kubectl delete deployments dialektor
 	kubectl delete service dialektor
