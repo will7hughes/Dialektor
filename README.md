@@ -12,15 +12,12 @@ Change directory to the Dialektor project
 ```
 cd Dialektor
 ```
-To understand the decision to use Docker for our development environment. <br>
-Read this article: https://www.untangled.dev/2020/05/30/why-docker-local-development/ <br>
-Then, to get the basics of what Docker is, read this https://vsupalov.com/6-docker-basics/ <br>
-
-Install Docker Desktop: https://www.docker.com/products/docker-desktop <br>
+Install Docker Desktop<br>
 Follow installation prompts from docker desktop for `extra configuration setup`. <br>
 For example, I had to copy/paste and run a `powershell command for WSL`. <br>
 I also had to do `step 4` from this site: https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package. <br>
 `Restart your computer`, if prompted to. <br>
+https://www.docker.com/products/docker-desktop <br>
 Create the container
 ```
 docker-compose create
@@ -125,4 +122,7 @@ Jason Myers<br>
 [what is Dialektor](./Documentation/Dialektor.md)
 
 ## Sources Cited
+To understand the decision to use Docker for our development environment. <br>
+Read this article: https://www.untangled.dev/2020/05/30/why-docker-local-development/ <br>
+Then, to get the basics of what Docker is, read this https://vsupalov.com/6-docker-basics/ <br>
 https://www.untangled.dev/2020/06/06/docker-django-local-dev/
