@@ -146,12 +146,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
+
 # [START staticurl]
 # Development Static url
-# STATIC_URL = '/static/'
 
-# Production Static Url
-STATIC_URL = 'https://storage.googleapis.com/dialektor-bucket/static/'
+
 # [END staticurl]
-
-STATIC_ROOT = 'static/'
+if os.getenv('GAE_APPLICATION', None):
+	# Production Static Url
+	STATIC_ROOT = 'static/'
+	STATIC_URL = 'https://storage.googleapis.com/dialektor-bucket/static/'
+else:
+	# Development Static url
+	STATICFILES_DIRS = [
+		os.path.join(BASE_DIR, "static"),
+		os.path.join(BASE_DIR, "media"),
+	]
+	STATIC_URL = '/static/'
