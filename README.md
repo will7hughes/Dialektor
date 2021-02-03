@@ -112,6 +112,7 @@ Create a feature branch<br>
 DO NOT WORK ON THE MASTER BRANCH ON YOUR LOCAL DEVELOPMENT!!!!!!!!!!!<br>
 DO NOT MERGE TO THE MASTER BRANCH ON YOUR LOCAL DEVELOPMENT!!!!!!!!!<br>
 DO NOT TOUCH THE MASTER BRANCH ON YOUR LOCAL DEVELOPMENT!!!!!!!!!!<br>
+Note that you can run these git commands directly from the VS Code terminal while connected to Docker `web` component
 ```
 git branch 1.0.1-john
 ```
