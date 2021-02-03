@@ -61,8 +61,8 @@ If you forget your password. Just re-run the createsuper command above<br>
 You have now completely setup the development environment<br>
 
 ## Visual Studio Code Setup
-Download Here: https://code.visualstudio.com/download
-Install Pluggin Remote - Containers: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
+Download Here: https://code.visualstudio.com/download<br>
+Install Pluggin Remote - Containers: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers<br>
 Make sure Docker is running
 ```
 docker-compose up
