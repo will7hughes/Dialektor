@@ -325,6 +325,7 @@ Kubernetes Setup Tutorial: https://cloud.google.com/python/django/kubernetes-eng
 Django Documentation: https://docs.djangoproject.com/en/3.1/<br>
 Django Getting Started Series: https://docs.djangoproject.com/en/3.1/intro/tutorial01/<br>
 Django Table of Contents: https://docs.djangoproject.com/en/3.1/contents/<br>
+Django Project Structure: https://django-project-skeleton.readthedocs.io/en/latest/structure.html<br>
 Django Rest Framework: https://www.django-rest-framework.org/tutorial/1-serialization/<br>
 Yashar's Original Repo: https://github.com/yasharAhari/Dialektor<br>
 Github Pull Request: https://guides.github.com/activities/hello-world/#pr
