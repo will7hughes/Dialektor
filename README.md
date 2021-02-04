@@ -280,6 +280,10 @@ Pull
 ```
 git pull origin BRANCH_NAME
 ```
+Merge
+```
+git merge master
+```
 Push
 ```
 git push origin BRANCH_NAME
