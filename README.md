@@ -8,6 +8,7 @@ Table of contents
    * [Setup Docker for Local Development](#setup-docker-for-local-development)
    * [Visual Studio Code Setup](#visual-studio-code-setup)
    * [Development Lifecyle](#Development-Lifecyle)
+   * [Dialektor Development Team](#Dialektor-Development-Team)
 <!--te-->
 
 Setup Docker for Local Development
@@ -72,6 +73,7 @@ python manage.py runserver
 You can now go to `http://127.0.0.1:8000/admin` and login with the superuser you created<br>
 If you forget your password. Just re-run the createsuper command above<br>
 You have now completely setup the development environment<br>
+[Table of Contents](#Table-of-Contents)
 
 Visual Studio Code Setup
 ============
@@ -116,6 +118,7 @@ You can shutdown the website by going to the console and using the key combinati
 ```
 Ctr + C
 ```
+[Table of Contents](#Table-of-Contents)
 
 Development Lifecyle
 ============
@@ -160,6 +163,7 @@ I `Will` will manage the pull requests for the first couple weeks for quality as
 I will use the pull requests to merge the feature branch into the master branch<br>
 I will also be managing Kubernetes deployment until you've made several pull requests and shown you've got that down<br>
 Don't worry about production deployment until you've handled local development<br>
+[Table of Contents](#Table-of-Contents)
 
 Dialektor Development Team
 ============
@@ -183,6 +187,7 @@ Lieu Dean<br>
 Jason Myers<br>
 
 [what is Dialektor](./Documentation/Dialektor.md)
+[Table of Contents](#Table-of-Contents)
 
 Sources Cited
 ============
@@ -190,3 +195,4 @@ To understand the decision to use Docker for our development environment. <br>
 Read this article: https://www.untangled.dev/2020/05/30/why-docker-local-development/ <br>
 Then, to get the basics of what Docker is, read this https://vsupalov.com/6-docker-basics/ <br>
 https://www.untangled.dev/2020/06/06/docker-django-local-dev/
+[Table of Contents](#Table-of-Contents)
