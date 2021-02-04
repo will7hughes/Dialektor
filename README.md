@@ -9,6 +9,10 @@ Table of Contents
    * [Setup Docker for Local Development](#setup-docker-for-local-development)
    * [Visual Studio Code Setup](#visual-studio-code-setup)
    * [Development Lifecyle](#Development-Lifecyle)
+   * [Command Reference List](#Command-Reference-List)
+      * [Docker](#Docker)
+      * [Django](#Django)
+      * [GitHub](#GitHub)
    * [Dialektor Development Team](#Dialektor-Development-Team)
 <!--te-->
 
@@ -165,6 +169,104 @@ I will use the pull requests to merge the feature branch into the master branch<
 I will also be managing Kubernetes deployment until you've made several pull requests and shown you've got that down<br>
 Don't worry about production deployment until you've handled local development<br>
 [Table of Contents](#Dialektor)
+
+Command Reference List
+============
+
+Docker
+-----
+Startup
+```
+docker-compose up
+```
+Create the Container
+```
+docker-compose create
+```
+List Running Apps
+```
+docker ps
+```
+Enter the `web` App
+```
+docker-compose exec web sh
+```
+Enter the `db` App (Local PostgreSQL Database)
+```
+docker-compose exec db sh
+```
+Build/Rebuild apps
+```
+docker-compose build
+```
+
+Django
+-----
+Start Localhost Dev Site at <br>
+http://127.0.0.1:8080 <br>
+Admin: http://127.0.0.1:8080/admin <br>
+NOTE: Must be run inside Docker `web` app<br>
+NOTE: Can be run inside Visual Studio Code terminal when VS Code is connected to Docker Container `web` app<br>
+```
+python manage.py runserver
+```
+Shutdown Localhost Dev Site<br>
+NOTE: Must be used on same terminal/console window that ran the server with the above command
+```
+Ctrl + C
+```
+Stage Database Migrations<br>
+NOTE: Change out `personal` for whatever app that contains the `models.py` for the Database Model that you have changed<br>
+NOTE: You can leave out `personal` to makemigrations for all apps. Provided this is not the first time you are making the migrations<br>
+```
+python manage.py makemigrations personal
+```
+Migrate Database<br>
+Applies the migrations that were staged from the above command<br>
+NOTE: You can leave out `personal` to migrate for all apps. Provided this is not the first time you are migrating<br>
+```
+python manage.py migrate personal
+```
+Create Admin<br>
+http://127.0.0.1:8080/admin
+```
+python manage.py createsuperuser
+```
+
+GitHub
+-----
+Create a Branch<br>
+```
+git branch BRANCH_NAME
+```
+Checkout Branch
+```
+git checkout BRANCH_NAME
+```
+Create and Checkout Branch
+```
+git checkout -b BRANCH_NAME
+```
+Add Changes to Staging Area<br>
+```
+git add *
+```
+View Staging
+```
+git status
+```
+Commit
+```
+git commit -m "My super duper descriptive message about all the new goodies I just did"
+```
+Pull
+```
+git pull origin BRANCH_NAME
+```
+Push
+```
+git push origin BRANCH_NAME
+```
 
 Dialektor Development Team
 ============
