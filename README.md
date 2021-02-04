@@ -20,7 +20,7 @@ Table of Contents
       * [Docker](#Docker)
       * [Django](#Django)
       * [GitHub](#GitHub)
-   * [Dialektor Development Team](#Dialektor-Development-Team)
+   * [Meet the Team](#Dialektor-Development-Team)
 <!--te-->
 
 Setup Docker for Local Development
