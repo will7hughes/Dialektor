@@ -19,29 +19,29 @@
 # https://github.com/GoogleCloudPlatform/python-docker
 
 # START Production Docker
-FROM gcr.io/google_appengine/python
+# FROM gcr.io/google_appengine/python
 
-# Create a virtualenv for the application dependencies.
-RUN virtualenv -p python3 /env
-ENV PATH /env/bin:$PATH
+# # Create a virtualenv for the application dependencies.
+# RUN virtualenv -p python3 /env
+# ENV PATH /env/bin:$PATH
 
-ADD requirements.txt /app/requirements.txt
-RUN /env/bin/pip install --upgrade pip && /env/bin/pip install -r /app/requirements.txt
-ADD . /app
+# ADD requirements.txt /app/requirements.txt
+# RUN /env/bin/pip install --upgrade pip && /env/bin/pip install -r /app/requirements.txt
+# ADD . /app
 
-CMD gunicorn -b :$PORT mysite.wsgi
+# CMD gunicorn -b :$PORT mysite.wsgi
 # END Production Docker
 
 # START Development Docker
-# FROM python:3
-# ENV PYTHONDONTWRITEBYTECODE 1
-# ENV PYTHONUNBUFFERED 1
-# RUN mkdir /code
-# WORKDIR /code
-# COPY requirements.txt /code/
-# RUN pip install -r requirements.txt
+FROM python:3
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+RUN mkdir /code
+WORKDIR /code
+COPY requirements.txt /code/
+RUN pip install -r requirements.txt
 
-# EXPOSE 8080
+EXPOSE 8080
 
 # COPY . /code/
 # END Development Docker
