@@ -59,6 +59,36 @@ Verify that there are two containers up `db` and `web`
 docker ps
 ```
 Open a new powershell window<br>
+Enter the `db` App (Local PostgreSQL Database)
+```
+docker-compose exec db sh
+```
+Open `psql` as user `postgres`
+```
+su - postgres -c psql
+```
+Create Database
+```
+CREATE DATABASE dialektorlocaldb
+```
+Create User
+```
+CREATE USER dialektoruser WITH PASSWORD 'password'
+```
+Setup user roles
+```
+ALTER ROLE dialektoruser SET client_encoding TO 'utf8'
+ALTER ROLE dialektoruser SET default_transaction_isolation TO 'read committed'
+ALTER ROLE dialektoruser SET timezone TO 'UTC'
+```
+Grant user privileges
+```
+GRANT ALL PRIVILEGES ON DATABASE dialektorlocaldb TO dialektoruser
+```
+The `db` docker container is now configured with a database named, `dialektorlocaldb` and a user, `dialektoruser`<br>
+We will now setup the `web` docker container<br>
+Exit `psql` and `db` docker OR open a new terminal\powershell<br>
+Exit `psql`
 Enter the `web` container<br>
 ```
 docker-compose exec web sh
