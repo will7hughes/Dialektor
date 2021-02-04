@@ -156,6 +156,21 @@ Commit the changes. Add a descriptive message about a feature, bug fix, ui chang
 ```
 git commit -m "My super duper descriptive message about all the new goodies I just did"
 ```
+Pull changes from remote repo <br>
+We will pull the master branch so that we can merge changes to test that they work with our changes<br>
+```
+git pull origin master
+```
+Merge master Branch into our feature Branch<br>
+If there are conflicts. Resolve them manually by deleting the markup that GitHub has created and manually looking at the differences between the two options<br>
+Delete one of the options/conflicts and keep the other<br>
+It is easier to merge the master branch into your feature branch by using the `Pull Requests` feature on the GitHub website<br>
+To use that feature instead of doing it on the console/terminal, `push` your feature branch, create a `Pull Request`<br>
+Change the `base: master` to `master` and `compare: 1.0.1-john` to your feature branch<br>
+Create the Request, Apply, Merge, Resolve
+```
+git merge master
+```
 Push changes to remote repo. <br>
 DO NOT WORK ON THE MASTER BRANCH ON YOUR LOCAL DEVELOPMENT!!!!!!!!!!!<br>
 Always develop on a feature branch. For example, `1.0.1-will`<br>
