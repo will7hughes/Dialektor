@@ -26,12 +26,13 @@ Table of Contents
 
 Setup Docker for Local Development
 ============
-Install Git [here](https://github.com/git-guides/install-git)
+Install Git [here](https://github.com/git-guides/install-git)<br>
 [Clone](https://github.com/git-guides/git-clone) the GitHub Repo<br>
 ```
 git clone https://github.com/will7hughes/Dialektor.git
 ```
-Change directory to the Dialektor project Commands for (Mac)[https://gist.github.com/poopsplat/7195274#core-commands], (Windows)[http://www.cs.columbia.edu/~sedwards/classes/2015/1102-fall/Command%20Prompt%20Cheatsheet.pdf], and (Linux)[https://cheatography.com/davechild/cheat-sheets/linux-command-line/]
+Change directory to the Dialektor project <br>
+Commands for [Mac](https://gist.github.com/poopsplat/7195274#core-commands) [Windows](http://www.cs.columbia.edu/~sedwards/classes/2015/1102-fall/Command%20Prompt%20Cheatsheet.pdf) and [Linux](https://cheatography.com/davechild/cheat-sheets/linux-command-line/)
 ```
 cd Dialektor
 ```
