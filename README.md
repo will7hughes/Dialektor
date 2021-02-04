@@ -317,16 +317,33 @@ Zachary Arani<br>
 
 Useful Links and Sources Cited
 ============
-To understand the decision to use Docker for our development environment. <br>
-Read this article: https://www.untangled.dev/2020/05/30/why-docker-local-development/ <br>
-Then, to get the basics of what Docker is, read this https://vsupalov.com/6-docker-basics/ <br>
-https://www.untangled.dev/2020/06/06/docker-django-local-dev/ <br>
+To understand the decision to use Docker for our development environment: https://www.untangled.dev/2020/05/30/why-docker-local-development/ <br>
+Docker Basics https://vsupalov.com/6-docker-basics/ <br>
+Docker Setup for Django: https://www.untangled.dev/2020/06/06/docker-django-local-dev/ <br>
 Kubernetes Setup Tutorial: https://cloud.google.com/python/django/kubernetes-engine<br>
+Google Cloud Console Dashboard: https://console.cloud.google.com/home/dashboard<br>
 Django Documentation: https://docs.djangoproject.com/en/3.1/<br>
 Django Getting Started Series: https://docs.djangoproject.com/en/3.1/intro/tutorial01/<br>
 Django Table of Contents: https://docs.djangoproject.com/en/3.1/contents/<br>
 Django Project Structure: https://django-project-skeleton.readthedocs.io/en/latest/structure.html<br>
+Django Settings: https://docs.djangoproject.com/en/3.1/topics/settings/<br>
+Django Views: https://docs.djangoproject.com/en/3.1/topics/http/views/<br>
+Django Class Based Views: https://docs.djangoproject.com/en/3.1/topics/class-based-views/<br>
+Django Conditional Views: https://docs.djangoproject.com/en/3.1/topics/conditional-view-processing/<br>
+Django Forms: https://docs.djangoproject.com/en/3.1/topics/forms/<br>
+Django Templates: https://docs.djangoproject.com/en/3.1/topics/templates/<br>
+Django Migrations: https://docs.djangoproject.com/en/3.1/topics/migrations/<br>
+Django Files: https://docs.djangoproject.com/en/3.1/topics/files/<br>
+Django Caching: https://docs.djangoproject.com/en/3.1/topics/cache/<br>
+Django Security: https://docs.djangoproject.com/en/3.1/topics/security/<br>
 Django Rest Framework: https://www.django-rest-framework.org/tutorial/1-serialization/<br>
+Django Serialization: https://docs.djangoproject.com/en/3.1/topics/serialization/<br>
+Django How-To Guides: https://docs.djangoproject.com/en/3.1/howto/<br>
 Yashar's Original Repo: https://github.com/yasharAhari/Dialektor<br>
 Github Pull Request: https://guides.github.com/activities/hello-world/#pr
+Makefile Basics: https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/<br>
+Makefile for Django: https://gist.github.com/magopian/4077998<br>
+PostgreSQL Basics: https://www.postgresqltutorial.com/<br>
+
+
 [Table of Contents](#Dialektor)
