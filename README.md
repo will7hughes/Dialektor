@@ -1,23 +1,48 @@
 
 # Dialektor
-Version: 1.0.1<br>
+**Version: 1.0.3**<br>
+Dialektor is a tool for recording audio and creating a ledger in order to study the changes overtime. <br>
+Under supervision of **Dr. Rafal Jabrzemski**.<br>
+[MIT License](https://github.com/will7hughes/Dialektor/blob/master/LICENSE)
 
-## Setup Docker for Local Development
+**Possible Usages**
+- _Learning_ languages, instruments, and speech therapy
+- _Researching_ dialects and linguistics
+- _Professions_ involving sound
+  - Speech Therapist, Musician, Linguist, Translator, Post Production, Recording/Studio Engineer, Audio Forensic Engineer
 
-As usual, start with a git clone <br>
+Table of Contents
+=================
+
+<!--ts-->
+   * [Setup Docker for Local Development](#setup-docker-for-local-development)
+   * [Visual Studio Code Setup](#visual-studio-code-setup)
+   * [Development Lifecyle](#Development-Lifecyle)
+   * [Command Reference List](#Command-Reference-List)
+      * [Docker](#Docker)
+      * [Django](#Django)
+      * [GitHub](#GitHub)
+   * [Meet the Team](#Dialektor-Development-Team)
+   * [Useful Links and Sources Cited](#Useful-Links-and-Sources-Cited)
+<!--te-->
+
+Setup Docker for Local Development
+============
+Install Git [here](https://github.com/git-guides/install-git)<br>
+[Clone](https://github.com/git-guides/git-clone) the GitHub Repo<br>
 ```
 git clone https://github.com/will7hughes/Dialektor.git
 ```
-Change directory to the Dialektor project
+Change directory to the Dialektor project <br>
+Commands for [Mac](https://gist.github.com/poopsplat/7195274#core-commands) [Windows](http://www.cs.columbia.edu/~sedwards/classes/2015/1102-fall/Command%20Prompt%20Cheatsheet.pdf) and [Linux](https://cheatography.com/davechild/cheat-sheets/linux-command-line/)
 ```
 cd Dialektor
 ```
-Install Docker Desktop<br>
-https://www.docker.com/products/docker-desktop <br>
+Install Docker Desktop [here](https://www.docker.com/products/docker-desktop) <br>
 
-Follow installation prompts from docker desktop for `extra configuration setup`. <br>
+Follow installation prompts from [Docker](https://vsupalov.com/6-docker-basics/) desktop for `extra configuration setup`. <br>
 For example, I had to copy/paste and run a `powershell command for WSL`. <br>
-I also had to do `step 4` from this site: https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package. <br>
+I also had to do `step 4` from this site [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package)<br>
 
 Restart your computer
 
@@ -33,6 +58,37 @@ Verify that there are two containers up `db` and `web`
 ```
 docker ps
 ```
+Open a new powershell window<br>
+Enter the `db` App (Local PostgreSQL Database)
+```
+docker-compose exec db sh
+```
+Open `psql` as user `postgres`
+```
+su - postgres -c psql
+```
+Create Database
+```
+CREATE DATABASE dialektorlocaldb
+```
+Create User
+```
+CREATE USER dialektoruser WITH PASSWORD 'password'
+```
+Setup user roles
+```
+ALTER ROLE dialektoruser SET client_encoding TO 'utf8'
+ALTER ROLE dialektoruser SET default_transaction_isolation TO 'read committed'
+ALTER ROLE dialektoruser SET timezone TO 'UTC'
+```
+Grant user privileges
+```
+GRANT ALL PRIVILEGES ON DATABASE dialektorlocaldb TO dialektoruser
+```
+The `db` docker container is now configured with a database named, `dialektorlocaldb` and a user, `dialektoruser`<br>
+We will now setup the `web` docker container<br>
+Exit `psql` and `db` docker OR open a new terminal\powershell<br>
+Exit `psql`
 Enter the `web` container<br>
 ```
 docker-compose exec web sh
@@ -63,11 +119,13 @@ python manage.py runserver
 You can now go to `http://127.0.0.1:8000/admin` and login with the superuser you created<br>
 If you forget your password. Just re-run the createsuper command above<br>
 You have now completely setup the development environment<br>
+[Table of Contents](#Dialektor)
 
-## Visual Studio Code Setup
+Visual Studio Code Setup
+============
 Download Here: https://code.visualstudio.com/download<br>
 Install Pluggin Remote - Containers: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers<br>
-Make sure Docker is running<br>
+Make sure [Docker](https://vsupalov.com/6-docker-basics/) is running<br>
 If you close Docker with `Ctrl+C` your VS Code window will disconnect<br>
 ```
 docker-compose up
@@ -101,14 +159,16 @@ Start localhost development website
 ```
 python manage.py runserver
 ```
-You can now go to http://127.0.0.1:8000 to view your localhost website while you develop<br>
+You can now go to http://127.0.0.1:8080 to view your localhost website while you develop<br>
 You can shutdown the website by going to the console and using the key combination
 ```
 Ctr + C
 ```
+[Table of Contents](#Dialektor)
 
-## Development Lifecyle
-Create a feature branch<br>
+Development Lifecyle
+============
+Create a feature [branch](https://guides.github.com/activities/hello-world/#branch)<br>
 DO NOT WORK ON THE MASTER BRANCH ON YOUR LOCAL DEVELOPMENT!!!!!!!!!!!<br>
 DO NOT MERGE TO THE MASTER BRANCH ON YOUR LOCAL DEVELOPMENT!!!!!!!!!<br>
 DO NOT TOUCH THE MASTER BRANCH ON YOUR LOCAL DEVELOPMENT!!!!!!!!!!<br>
@@ -116,9 +176,9 @@ Note that you can run these git commands directly from the VS Code terminal whil
 ```
 git branch 1.0.1-john
 ```
-The naming convention for a feature branch is X.X.X-firstname. <br>
+The naming convention for a feature [branch](https://guides.github.com/activities/hello-world/#branch) is X.X.X-firstname. <br>
 Where X(major)-X(minor)-X(point) are version codes<br><br>
-Checkout your feature branch
+Checkout your feature [branch](https://guides.github.com/activities/hello-world/#branch)
 ```
 git checkout 1.0.1-john
 ```
@@ -133,13 +193,28 @@ Verify that you are adding the files you have updated
 ```
 git status
 ```
-Commit the changes. Add a descriptive message about a feature, bug fix, ui change, etc.
+[Commit](https://guides.github.com/activities/hello-world/#commit) the changes. Add a descriptive message about a feature, bug fix, ui change, etc.
 ```
 git commit -m "My super duper descriptive message about all the new goodies I just did"
 ```
+Pull changes from remote repo <br>
+We will pull the master [branch](https://guides.github.com/activities/hello-world/#branch) so that we can merge changes to test that they work with our changes<br>
+```
+git pull origin master
+```
+[Merge](https://www.atlassian.com/git/tutorials/using-branches/git-merge#:~:text=Merging%20is%20Git's%20way%20of,merge%20into%20the%20current%20branch.) master [branch](https://guides.github.com/activities/hello-world/#branch) into our feature Branch<br>
+If there are conflicts. Resolve them manually by deleting the markup that GitHub has created and manually looking at the differences between the two options<br>
+Delete one of the options/conflicts and keep the other<br>
+It is easier to merge the master branch into your feature branch by using the [Pull Requests](https://guides.github.com/activities/hello-world/#pr) feature on the GitHub website<br>
+To use that feature instead of doing it on the console/terminal, `push` your feature [branch](https://guides.github.com/activities/hello-world/#branch), create a `Pull Request`<br>
+Change the `base: master` to `master` and `compare: 1.0.1-john` to your feature branch<br>
+Create the Request, Apply, Merge, Resolve
+```
+git merge master
+```
 Push changes to remote repo. <br>
 DO NOT WORK ON THE MASTER BRANCH ON YOUR LOCAL DEVELOPMENT!!!!!!!!!!!<br>
-Always develop on a feature branch. For example, `1.0.1-will`<br>
+Always develop on a feature [branch](https://guides.github.com/activities/hello-world/#branch). For example, `1.0.1-will`<br>
 See Development guide above for checking out or creating a feature branch<br>
 ```
 git push origin 1.0.1-will
@@ -149,31 +224,159 @@ I `Will` will manage the pull requests for the first couple weeks for quality as
 I will use the pull requests to merge the feature branch into the master branch<br>
 I will also be managing Kubernetes deployment until you've made several pull requests and shown you've got that down<br>
 Don't worry about production deployment until you've handled local development<br>
+[Table of Contents](#Dialektor)
 
-### Dialektor Development Team
-Group APYZ CS 4263 Software Engineering Capstone Project
-Group 11 CS 4273 Software Engineering Capstone Project
+Command Reference List
+============
 
-Under supervision of:<br> 
-Dr. Rafal Jabrzemski
+Docker
+-----
+Startup
+```
+docker-compose up
+```
+Create the Container
+```
+docker-compose create
+```
+List Running Apps
+```
+docker ps
+```
+Enter the `web` App
+```
+docker-compose exec web sh
+```
+Enter the `db` App (Local PostgreSQL Database)
+```
+docker-compose exec db sh
+```
+Build/Rebuild apps
+```
+docker-compose build
+```
+[Table of Contents](#Dialektor)
 
-TEAM: APYZ
+Django
+-----
+Start Localhost Dev Site at <br>
+http://127.0.0.1:8080 <br>
+Admin: http://127.0.0.1:8080/admin <br>
+NOTE: Must be run inside Docker `web` app<br>
+NOTE: Can be run inside Visual Studio Code terminal when VS Code is connected to Docker Container `web` app<br>
+```
+python manage.py runserver
+```
+Shutdown Localhost Dev Site<br>
+NOTE: Must be used on same terminal/console window that ran the server with the above command
+```
+Ctrl + C
+```
+Stage Database Migrations<br>
+NOTE: Change out `personal` for whatever app that contains the `models.py` for the Database Model that you have changed<br>
+NOTE: You can leave out `personal` to makemigrations for all apps. Provided this is not the first time you are making the migrations<br>
+```
+python manage.py makemigrations personal
+```
+Migrate Database<br>
+Applies the migrations that were staged from the above command<br>
+NOTE: You can leave out `personal` to migrate for all apps. Provided this is not the first time you are migrating<br>
+```
+python manage.py migrate personal
+```
+Create Admin<br>
+http://127.0.0.1:8080/admin
+```
+python manage.py createsuperuser
+```
+[Table of Contents](#Dialektor)
 
+GitHub
+-----
+Create a [Branch](https://guides.github.com/activities/hello-world/#branch)<br>
+```
+git branch BRANCH_NAME
+```
+Checkout Branch
+```
+git checkout BRANCH_NAME
+```
+Create and Checkout Branch
+```
+git checkout -b BRANCH_NAME
+```
+Add Changes to Staging Area<br>
+```
+git add *
+```
+View Staging
+```
+git status
+```
+[Commit](https://guides.github.com/activities/hello-world/#commit)
+```
+git commit -m "My super duper descriptive message about all the new goodies I just did"
+```
+Pull
+```
+git pull origin BRANCH_NAME
+```
+[Merge](https://www.atlassian.com/git/tutorials/using-branches/git-merge#:~:text=Merging%20is%20Git's%20way%20of,merge%20into%20the%20current%20branch.)
+```
+git merge master
+```
+Push
+```
+git push origin BRANCH_NAME
+```
+[Table of Contents](#Dialektor)
+
+Dialektor Development Team
+============
+
+Under supervision of **Dr. Rafal Jabrzemski**<br>
+
+Group 11 CS 4273 Software Engineering Capstone Project<br>
+Will Hughes<br>
+Lieu Dean<br>
+Jason Myers<br>
+<br>
+Group APYZ CS 4263 Software Engineering Capstone Project<br>
 Adam Gracy<br>
 Phillip Voss<br>
 Yashar G. Ahari<br>
 Zachary Arani<br>
+[Table of Contents](#Dialektor)
 
-TEAM: 11
+Useful Links and Sources Cited
+============
+To understand the decision to use Docker for our development environment: https://www.untangled.dev/2020/05/30/why-docker-local-development/ <br>
+Docker Basics https://vsupalov.com/6-docker-basics/ <br>
+Docker Setup for Django: https://www.untangled.dev/2020/06/06/docker-django-local-dev/ <br>
+Kubernetes Setup Tutorial: https://cloud.google.com/python/django/kubernetes-engine<br>
+Google Cloud Console Dashboard: https://console.cloud.google.com/home/dashboard<br>
+Django Documentation: https://docs.djangoproject.com/en/3.1/<br>
+Django Getting Started Series: https://docs.djangoproject.com/en/3.1/intro/tutorial01/<br>
+Django Table of Contents: https://docs.djangoproject.com/en/3.1/contents/<br>
+Django Project Structure: https://django-project-skeleton.readthedocs.io/en/latest/structure.html<br>
+Django Settings: https://docs.djangoproject.com/en/3.1/topics/settings/<br>
+Django Views: https://docs.djangoproject.com/en/3.1/topics/http/views/<br>
+Django Class Based Views: https://docs.djangoproject.com/en/3.1/topics/class-based-views/<br>
+Django Conditional Views: https://docs.djangoproject.com/en/3.1/topics/conditional-view-processing/<br>
+Django Forms: https://docs.djangoproject.com/en/3.1/topics/forms/<br>
+Django Templates: https://docs.djangoproject.com/en/3.1/topics/templates/<br>
+Django Migrations: https://docs.djangoproject.com/en/3.1/topics/migrations/<br>
+Django Files: https://docs.djangoproject.com/en/3.1/topics/files/<br>
+Django Caching: https://docs.djangoproject.com/en/3.1/topics/cache/<br>
+Django Security: https://docs.djangoproject.com/en/3.1/topics/security/<br>
+Django Rest Framework: https://www.django-rest-framework.org/tutorial/1-serialization/<br>
+Django Serialization: https://docs.djangoproject.com/en/3.1/topics/serialization/<br>
+Django How-To Guides: https://docs.djangoproject.com/en/3.1/howto/<br>
+Yashar's Original Repo: https://github.com/yasharAhari/Dialektor<br>
+Github Pull Request: https://guides.github.com/activities/hello-world/#pr
+Makefile Basics: https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/<br>
+Makefile for Django: https://gist.github.com/magopian/4077998<br>
+PostgreSQL Basics: https://www.postgresqltutorial.com/<br>
 
-Will Hughes<br>
-Lieu Dean<br>
-Jason Myers<br>
 
-[what is Dialektor](./Documentation/Dialektor.md)
-
-## Sources Cited
-To understand the decision to use Docker for our development environment. <br>
-Read this article: https://www.untangled.dev/2020/05/30/why-docker-local-development/ <br>
-Then, to get the basics of what Docker is, read this https://vsupalov.com/6-docker-basics/ <br>
-https://www.untangled.dev/2020/06/06/docker-django-local-dev/
+[Table of Contents](#Dialektor)
