@@ -135,7 +135,7 @@ Ctr + C
 
 Development Lifecyle
 ============
-Create a feature (branch)[https://guides.github.com/activities/hello-world/#branch]<br>
+Create a feature [branch](https://guides.github.com/activities/hello-world/#branch)<br>
 DO NOT WORK ON THE MASTER BRANCH ON YOUR LOCAL DEVELOPMENT!!!!!!!!!!!<br>
 DO NOT MERGE TO THE MASTER BRANCH ON YOUR LOCAL DEVELOPMENT!!!!!!!!!<br>
 DO NOT TOUCH THE MASTER BRANCH ON YOUR LOCAL DEVELOPMENT!!!!!!!!!!<br>
@@ -143,9 +143,9 @@ Note that you can run these git commands directly from the VS Code terminal whil
 ```
 git branch 1.0.1-john
 ```
-The naming convention for a feature (branch)[https://guides.github.com/activities/hello-world/#branch] is X.X.X-firstname. <br>
+The naming convention for a feature [branch](https://guides.github.com/activities/hello-world/#branch) is X.X.X-firstname. <br>
 Where X(major)-X(minor)-X(point) are version codes<br><br>
-Checkout your feature (branch)[https://guides.github.com/activities/hello-world/#branch]
+Checkout your feature [branch](https://guides.github.com/activities/hello-world/#branch)
 ```
 git checkout 1.0.1-john
 ```
@@ -165,15 +165,15 @@ git status
 git commit -m "My super duper descriptive message about all the new goodies I just did"
 ```
 Pull changes from remote repo <br>
-We will pull the master branch so that we can merge changes to test that they work with our changes<br>
+We will pull the master [branch](https://guides.github.com/activities/hello-world/#branch) so that we can merge changes to test that they work with our changes<br>
 ```
 git pull origin master
 ```
-[Merge](https://www.atlassian.com/git/tutorials/using-branches/git-merge#:~:text=Merging%20is%20Git's%20way%20of,merge%20into%20the%20current%20branch.) master (branch)[https://guides.github.com/activities/hello-world/#branch] into our feature Branch<br>
+[Merge](https://www.atlassian.com/git/tutorials/using-branches/git-merge#:~:text=Merging%20is%20Git's%20way%20of,merge%20into%20the%20current%20branch.) master [branch](https://guides.github.com/activities/hello-world/#branch) into our feature Branch<br>
 If there are conflicts. Resolve them manually by deleting the markup that GitHub has created and manually looking at the differences between the two options<br>
 Delete one of the options/conflicts and keep the other<br>
 It is easier to merge the master branch into your feature branch by using the [Pull Requests](https://guides.github.com/activities/hello-world/#pr) feature on the GitHub website<br>
-To use that feature instead of doing it on the console/terminal, `push` your feature (branch)[https://guides.github.com/activities/hello-world/#branch], create a `Pull Request`<br>
+To use that feature instead of doing it on the console/terminal, `push` your feature [branch](https://guides.github.com/activities/hello-world/#branch), create a `Pull Request`<br>
 Change the `base: master` to `master` and `compare: 1.0.1-john` to your feature branch<br>
 Create the Request, Apply, Merge, Resolve
 ```
@@ -181,7 +181,7 @@ git merge master
 ```
 Push changes to remote repo. <br>
 DO NOT WORK ON THE MASTER BRANCH ON YOUR LOCAL DEVELOPMENT!!!!!!!!!!!<br>
-Always develop on a feature (branch)[https://guides.github.com/activities/hello-world/#branch]. For example, `1.0.1-will`<br>
+Always develop on a feature [branch](https://guides.github.com/activities/hello-world/#branch). For example, `1.0.1-will`<br>
 See Development guide above for checking out or creating a feature branch<br>
 ```
 git push origin 1.0.1-will
@@ -260,15 +260,15 @@ python manage.py createsuperuser
 
 GitHub
 -----
-Create a (Branch)[https://guides.github.com/activities/hello-world/#branch]<br>
+Create a [Branch](https://guides.github.com/activities/hello-world/#branch)<br>
 ```
 git branch BRANCH_NAME
 ```
-Checkout (Branch)[https://guides.github.com/activities/hello-world/#branch]
+Checkout Branch
 ```
 git checkout BRANCH_NAME
 ```
-Create and Checkout (Branch)[https://guides.github.com/activities/hello-world/#branch]
+Create and Checkout Branch
 ```
 git checkout -b BRANCH_NAME
 ```
