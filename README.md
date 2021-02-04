@@ -129,7 +129,7 @@ Start localhost development website
 ```
 python manage.py runserver
 ```
-You can now go to http://127.0.0.1:8000 to view your localhost website while you develop<br>
+You can now go to http://127.0.0.1:8080 to view your localhost website while you develop<br>
 You can shutdown the website by going to the console and using the key combination
 ```
 Ctr + C
