@@ -60,6 +60,9 @@ docker ps
 ```
 Open a new powershell window<br>
 Enter the `web` container<br>
+You can either enter the `web` container through powershell or through Visual Studio Code at this point<br>
+If you want to connect via Visual Studio Code and run the rest of the commands on VS Code Terminal<br>
+Go to [Visual Studio Code Setup](#visual-studio-code-setup)
 ```
 docker-compose exec web sh
 ```
