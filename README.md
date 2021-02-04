@@ -7,6 +7,7 @@ Table of contents
 <!--ts-->
    * [Setup Docker for Local Development](#setup-docker-for-local-development)
    * [Visual Studio Code Setup](#visual-studio-code-setup)
+   * [Development Lifecyle](#Development-Lifecyle)
 <!--te-->
 
 Setup Docker for Local Development
