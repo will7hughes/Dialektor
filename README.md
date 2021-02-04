@@ -1,6 +1,6 @@
 
 # Dialektor
-**Version: 1.0.1**<br>
+**Version: 1.0.3**<br>
 Dialektor is a tool for recording audio and creating a ledger of recorded audios in order to study the change overtime. 
 
 **Possible Usages**
