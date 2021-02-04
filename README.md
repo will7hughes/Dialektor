@@ -26,21 +26,20 @@ Table of Contents
 
 Setup Docker for Local Development
 ============
-
-As usual, start with a git clone <br>
+Install Git [here](https://github.com/git-guides/install-git)
+[Clone](https://github.com/git-guides/git-clone) the GitHub Repo<br>
 ```
 git clone https://github.com/will7hughes/Dialektor.git
 ```
-Change directory to the Dialektor project
+Change directory to the Dialektor project Commands for (Mac)[https://gist.github.com/poopsplat/7195274#core-commands], (Windows)[http://www.cs.columbia.edu/~sedwards/classes/2015/1102-fall/Command%20Prompt%20Cheatsheet.pdf], and (Linux)[https://cheatography.com/davechild/cheat-sheets/linux-command-line/]
 ```
 cd Dialektor
 ```
-Install Docker Desktop<br>
-https://www.docker.com/products/docker-desktop <br>
+Install Docker Desktop [here](https://www.docker.com/products/docker-desktop) <br>
 
-Follow installation prompts from docker desktop for `extra configuration setup`. <br>
+Follow installation prompts from [Docker](https://vsupalov.com/6-docker-basics/) desktop for `extra configuration setup`. <br>
 For example, I had to copy/paste and run a `powershell command for WSL`. <br>
-I also had to do `step 4` from this site: https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package. <br>
+I also had to do `step 4` from this site [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package)<br>
 
 Restart your computer
 
