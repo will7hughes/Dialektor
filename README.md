@@ -7,7 +7,7 @@
 - **Learning** languages, instruments, and speech therapy
 - **Researching** dialects and linguistics
 - **Professions** involving sound. 
-  - For example, Speech Therapist, Musician, Linguist, Translator, Post Production, Recording/Studio Engineer, Audio Forensic Engineer, and many many more!
+  - For example, Speech Therapist, Musician, Linguist, Translator, Post Production, Recording/Studio Engineer, Audio Forensic Engineer
 
 Table of Contents
 =================
