@@ -2,7 +2,7 @@
 # Dialektor
 **Version: 1.0.3**<br>
 Dialektor is a tool for recording audio and creating a ledger in order to study the changes overtime. 
-Currently licensed under the [MIT](License.md)
+Currently licensed under the [MIT](https://github.com/will7hughes/Dialektor/edit/master/LICENSE) license, but is subject to change
 
 **Possible Usages**
 - _Learning_ languages, instruments, and speech therapy
