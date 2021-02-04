@@ -21,6 +21,7 @@ Table of Contents
       * [Django](#Django)
       * [GitHub](#GitHub)
    * [Meet the Team](#Dialektor-Development-Team)
+   * [Useful Links and Sources Cited](#Useful-Links-and-Sources-Cited)
 <!--te-->
 
 Setup Docker for Local Development
@@ -91,7 +92,7 @@ Visual Studio Code Setup
 ============
 Download Here: https://code.visualstudio.com/download<br>
 Install Pluggin Remote - Containers: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers<br>
-Make sure Docker is running<br>
+Make sure [Docker](https://vsupalov.com/6-docker-basics/) is running<br>
 If you close Docker with `Ctrl+C` your VS Code window will disconnect<br>
 ```
 docker-compose up
@@ -134,7 +135,7 @@ Ctr + C
 
 Development Lifecyle
 ============
-Create a feature branch<br>
+Create a feature (branch)[https://guides.github.com/activities/hello-world/#branch]<br>
 DO NOT WORK ON THE MASTER BRANCH ON YOUR LOCAL DEVELOPMENT!!!!!!!!!!!<br>
 DO NOT MERGE TO THE MASTER BRANCH ON YOUR LOCAL DEVELOPMENT!!!!!!!!!<br>
 DO NOT TOUCH THE MASTER BRANCH ON YOUR LOCAL DEVELOPMENT!!!!!!!!!!<br>
@@ -142,9 +143,9 @@ Note that you can run these git commands directly from the VS Code terminal whil
 ```
 git branch 1.0.1-john
 ```
-The naming convention for a feature branch is X.X.X-firstname. <br>
+The naming convention for a feature (branch)[https://guides.github.com/activities/hello-world/#branch] is X.X.X-firstname. <br>
 Where X(major)-X(minor)-X(point) are version codes<br><br>
-Checkout your feature branch
+Checkout your feature (branch)[https://guides.github.com/activities/hello-world/#branch]
 ```
 git checkout 1.0.1-john
 ```
@@ -159,7 +160,7 @@ Verify that you are adding the files you have updated
 ```
 git status
 ```
-Commit the changes. Add a descriptive message about a feature, bug fix, ui change, etc.
+[Commit](https://guides.github.com/activities/hello-world/#commit) the changes. Add a descriptive message about a feature, bug fix, ui change, etc.
 ```
 git commit -m "My super duper descriptive message about all the new goodies I just did"
 ```
@@ -168,11 +169,11 @@ We will pull the master branch so that we can merge changes to test that they wo
 ```
 git pull origin master
 ```
-Merge master Branch into our feature Branch<br>
+[Merge](https://www.atlassian.com/git/tutorials/using-branches/git-merge#:~:text=Merging%20is%20Git's%20way%20of,merge%20into%20the%20current%20branch.) master (branch)[https://guides.github.com/activities/hello-world/#branch] into our feature Branch<br>
 If there are conflicts. Resolve them manually by deleting the markup that GitHub has created and manually looking at the differences between the two options<br>
 Delete one of the options/conflicts and keep the other<br>
-It is easier to merge the master branch into your feature branch by using the `Pull Requests` feature on the GitHub website<br>
-To use that feature instead of doing it on the console/terminal, `push` your feature branch, create a `Pull Request`<br>
+It is easier to merge the master branch into your feature branch by using the [Pull Requests](https://guides.github.com/activities/hello-world/#pr) feature on the GitHub website<br>
+To use that feature instead of doing it on the console/terminal, `push` your feature (branch)[https://guides.github.com/activities/hello-world/#branch], create a `Pull Request`<br>
 Change the `base: master` to `master` and `compare: 1.0.1-john` to your feature branch<br>
 Create the Request, Apply, Merge, Resolve
 ```
@@ -180,7 +181,7 @@ git merge master
 ```
 Push changes to remote repo. <br>
 DO NOT WORK ON THE MASTER BRANCH ON YOUR LOCAL DEVELOPMENT!!!!!!!!!!!<br>
-Always develop on a feature branch. For example, `1.0.1-will`<br>
+Always develop on a feature (branch)[https://guides.github.com/activities/hello-world/#branch]. For example, `1.0.1-will`<br>
 See Development guide above for checking out or creating a feature branch<br>
 ```
 git push origin 1.0.1-will
@@ -259,15 +260,15 @@ python manage.py createsuperuser
 
 GitHub
 -----
-Create a Branch<br>
+Create a (Branch)[https://guides.github.com/activities/hello-world/#branch]<br>
 ```
 git branch BRANCH_NAME
 ```
-Checkout Branch
+Checkout (Branch)[https://guides.github.com/activities/hello-world/#branch]
 ```
 git checkout BRANCH_NAME
 ```
-Create and Checkout Branch
+Create and Checkout (Branch)[https://guides.github.com/activities/hello-world/#branch]
 ```
 git checkout -b BRANCH_NAME
 ```
@@ -279,7 +280,7 @@ View Staging
 ```
 git status
 ```
-Commit
+[Commit](https://guides.github.com/activities/hello-world/#commit)
 ```
 git commit -m "My super duper descriptive message about all the new goodies I just did"
 ```
@@ -287,7 +288,7 @@ Pull
 ```
 git pull origin BRANCH_NAME
 ```
-Merge
+[Merge](https://www.atlassian.com/git/tutorials/using-branches/git-merge#:~:text=Merging%20is%20Git's%20way%20of,merge%20into%20the%20current%20branch.)
 ```
 git merge master
 ```
@@ -314,10 +315,17 @@ Yashar G. Ahari<br>
 Zachary Arani<br>
 [Table of Contents](#Dialektor)
 
-Sources Cited
+Useful Links and Sources Cited
 ============
 To understand the decision to use Docker for our development environment. <br>
 Read this article: https://www.untangled.dev/2020/05/30/why-docker-local-development/ <br>
 Then, to get the basics of what Docker is, read this https://vsupalov.com/6-docker-basics/ <br>
 https://www.untangled.dev/2020/06/06/docker-django-local-dev/ <br>
+Kubernetes Setup Tutorial: https://cloud.google.com/python/django/kubernetes-engine<br>
+Django Documentation: https://docs.djangoproject.com/en/3.1/<br>
+Django Getting Started Series: https://docs.djangoproject.com/en/3.1/intro/tutorial01/<br>
+Django Table of Contents: https://docs.djangoproject.com/en/3.1/contents/<br>
+Django Rest Framework: https://www.django-rest-framework.org/tutorial/1-serialization/<br>
+Yashar's Original Repo: https://github.com/yasharAhari/Dialektor<br>
+Github Pull Request: https://guides.github.com/activities/hello-world/#pr
 [Table of Contents](#Dialektor)
