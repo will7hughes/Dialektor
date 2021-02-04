@@ -1,7 +1,8 @@
 
 # Dialektor
 Version: 1.0.1<br>
-Table of contents
+
+Table of Contents
 =================
 
 <!--ts-->
