@@ -1,8 +1,16 @@
 
 # Dialektor
 Version: 1.0.1<br>
+Table of contents
+=================
 
-## Setup Docker for Local Development
+<!--ts-->
+   * [Setup Docker for Local Development](#setup-docker-for-local-development)
+   * [Visual Studio Code Setup](#visual-studio-code-setup)
+<!--te-->
+
+Setup Docker for Local Development
+============
 
 As usual, start with a git clone <br>
 ```
@@ -64,7 +72,8 @@ You can now go to `http://127.0.0.1:8000/admin` and login with the superuser you
 If you forget your password. Just re-run the createsuper command above<br>
 You have now completely setup the development environment<br>
 
-## Visual Studio Code Setup
+Visual Studio Code Setup
+============
 Download Here: https://code.visualstudio.com/download<br>
 Install Pluggin Remote - Containers: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers<br>
 Make sure Docker is running<br>
@@ -107,7 +116,8 @@ You can shutdown the website by going to the console and using the key combinati
 Ctr + C
 ```
 
-## Development Lifecyle
+Development Lifecyle
+============
 Create a feature branch<br>
 DO NOT WORK ON THE MASTER BRANCH ON YOUR LOCAL DEVELOPMENT!!!!!!!!!!!<br>
 DO NOT MERGE TO THE MASTER BRANCH ON YOUR LOCAL DEVELOPMENT!!!!!!!!!<br>
@@ -150,7 +160,8 @@ I will use the pull requests to merge the feature branch into the master branch<
 I will also be managing Kubernetes deployment until you've made several pull requests and shown you've got that down<br>
 Don't worry about production deployment until you've handled local development<br>
 
-### Dialektor Development Team
+Dialektor Development Team
+============
 Group APYZ CS 4263 Software Engineering Capstone Project
 Group 11 CS 4273 Software Engineering Capstone Project
 
@@ -172,7 +183,8 @@ Jason Myers<br>
 
 [what is Dialektor](./Documentation/Dialektor.md)
 
-## Sources Cited
+Sources Cited
+============
 To understand the decision to use Docker for our development environment. <br>
 Read this article: https://www.untangled.dev/2020/05/30/why-docker-local-development/ <br>
 Then, to get the basics of what Docker is, read this https://vsupalov.com/6-docker-basics/ <br>
