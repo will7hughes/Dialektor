@@ -1,12 +1,13 @@
 
 # Dialektor
-Version: 1.0.1<br>
-Dialektor is a tool for recording audio and creating a ledger of recorded audios in order to study the change overtime. 
+**Version: 1.0.1**<br>
+**Dialektor** is a tool for recording audio and creating a ledger of recorded audios in order to study the change overtime. 
 
 #### Possible Usages
-- Learning languages, instruments, and speech therapy
-- Researching dialects and linguistics
-- Assisting Speech-Language Pathologists
+- **Learning** languages, instruments, and speech therapy
+- **Researching** dialects and linguistics
+- **Professions** involving sound. 
+  - For example, Speech Therapist, Musician, Linguist, Translator, Post Production, Recording/Studio Engineer, Audio Forensic Engineer, and many many more!
 
 Table of Contents
 =================
