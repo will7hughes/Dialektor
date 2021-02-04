@@ -199,6 +199,7 @@ Build/Rebuild apps
 ```
 docker-compose build
 ```
+[Table of Contents](#Dialektor)
 
 Django
 -----
@@ -232,6 +233,7 @@ http://127.0.0.1:8080/admin
 ```
 python manage.py createsuperuser
 ```
+[Table of Contents](#Dialektor)
 
 GitHub
 -----
@@ -267,6 +269,7 @@ Push
 ```
 git push origin BRANCH_NAME
 ```
+[Table of Contents](#Dialektor)
 
 Dialektor Development Team
 ============
@@ -289,7 +292,7 @@ Will Hughes<br>
 Lieu Dean<br>
 Jason Myers<br>
 
-[what is Dialektor](./Documentation/Dialektor.md)
+[what is Dialektor](./Documentation/Dialektor.md)<br>
 [Table of Contents](#Dialektor)
 
 Sources Cited
@@ -297,5 +300,5 @@ Sources Cited
 To understand the decision to use Docker for our development environment. <br>
 Read this article: https://www.untangled.dev/2020/05/30/why-docker-local-development/ <br>
 Then, to get the basics of what Docker is, read this https://vsupalov.com/6-docker-basics/ <br>
-https://www.untangled.dev/2020/06/06/docker-django-local-dev/
+https://www.untangled.dev/2020/06/06/docker-django-local-dev/ <br>
 [Table of Contents](#Dialektor)
