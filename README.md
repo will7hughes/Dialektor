@@ -58,6 +58,7 @@ Verify that there are two containers up `db` and `web`
 ```
 docker ps
 ```
+Open a new powershell window<br>
 Enter the `web` container<br>
 ```
 docker-compose exec web sh
