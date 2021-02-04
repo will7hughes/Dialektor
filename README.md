@@ -299,26 +299,19 @@ git push origin BRANCH_NAME
 
 Dialektor Development Team
 ============
-Group APYZ CS 4263 Software Engineering Capstone Project
-Group 11 CS 4273 Software Engineering Capstone Project
 
-Under supervision of:<br> 
-Dr. Rafal Jabrzemski
+Under supervision of **Dr. Rafal Jabrzemski**<br>
 
-TEAM: APYZ
-
+Group 11 CS 4273 Software Engineering Capstone Project<br>
+Will Hughes<br>
+Lieu Dean<br>
+Jason Myers<br>
+<br>
+Group APYZ CS 4263 Software Engineering Capstone Project<br>
 Adam Gracy<br>
 Phillip Voss<br>
 Yashar G. Ahari<br>
 Zachary Arani<br>
-
-TEAM: 11
-
-Will Hughes<br>
-Lieu Dean<br>
-Jason Myers<br>
-
-[what is Dialektor](./Documentation/Dialektor.md)<br>
 [Table of Contents](#Dialektor)
 
 Sources Cited
