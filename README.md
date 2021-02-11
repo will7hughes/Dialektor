@@ -85,10 +85,6 @@ Create a superuser to login to the django admin console
 ```
 python manage.py createsuperuser
 ```
-Start django localhost website
-```
-python manage.py runserver
-```
 You can now go to `http://127.0.0.1:8000/admin` and login with the superuser you created<br>
 If you forget your password. Just re-run the createsuper command above<br>
 You have now completely setup the development environment<br>
