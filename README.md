@@ -347,5 +347,8 @@ Makefile Basics: https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/<b
 Makefile for Django: https://gist.github.com/magopian/4077998<br>
 PostgreSQL Basics: https://www.postgresqltutorial.com/<br>
 
+Deployment Notes
+============
+If the Kubernetes cluster errors out you may need to re-create it. I had an issue when Kubernetes did an automatic update and I was unable to startup the cluster after the update so I re-created the cluster.
 
 [Table of Contents](#Dialektor)
