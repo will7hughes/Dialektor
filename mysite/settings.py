@@ -95,6 +95,10 @@ if PRODUCTION:
 		}
 	}
 else:
+	# Running development, connect to local PostgreSQL in our db Docker container
+	# You must setup the database 'dialektorlocaldb' and user 'dialektoruser' in your db Docker container
+	# Note that our Django app runs in the web Docker container, which is why our host is 'db' and not 'localhost'
+	# This is just a local database, so the password need not be complex :)
     DATABASES = {
 		'default': {
 			'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -105,10 +109,6 @@ else:
 			'PASSWORD': 'password'
 		}
 	}
-	# Running development, connect to local PostgreSQL in our db Docker container
-	# You must setup the database 'dialektorlocaldb' and user 'dialektoruser' in your db Docker container
-	# Note that our Django app runs in the web Docker container, which is why our host is 'db' and not 'localhost'
-	# This is just a local database, so the password need not be complex :)
 
 	# SQL Server Proxy to Production Migrations Only
 	# DATABASES = {
