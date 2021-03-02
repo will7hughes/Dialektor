@@ -1,11 +1,17 @@
 
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404, reverse
+
+# Start GCP only imports
 from google.cloud import datastore
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import User
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
+# End GCP only imports
+# Start local only import
+from django.core.files.storage import FileSystemStorage
+# End local only import
 from django.contrib.auth import authenticate, login, update_session_auth_hash
 from .models import CustomUser, metadata
 from .models import collection as Collection
@@ -16,7 +22,6 @@ from django.db.models import Q
 import operator
 from functools import reduce
 from datetime import datetime
-
 
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
@@ -46,15 +51,36 @@ def render_sound(request, sound_id):
 
 
 def get_sound(request, sound_id):
+	# Start GCP only get
+    # meta_obj = metadata.objects.get(fileID=sound_id)
+    # storage = StorageBucket(meta_obj)
+    # storage.s_read_file_from_bucket()
+    # file_rcv = storage.file
+    # return HttpResponse(file_rcv, content_type='application/force-download')
+	# End GCP only get
+
+	# Start local only get
 	fs = FileSystemStorage()
     f_data = fs.open(str(sound_id))
     return HttpResponse(f_data.read(), content_type='application/force-download')
+	# End local only get
 
 
 def download_sound(request, sound_id):
+	# Start GCP only download
+	# meta_obj = metadata.objects.get(fileID=sound_id)
+    # storage = StorageBucket(meta_obj)
+    # storage.s_read_file_from_bucket()
+    # file_rcv = storage.file
+    # response = HttpResponse(file_rcv, content_type='audio/mpeg')
+	# End GCP only download
+
+	# Start local only download
 	fs = FileSystemStorage()
     f_data = fs.open(str(sound_id))
     response = HttpResponse(f_data.read(), content_type='audio/mpeg')
+	# End local only download
+
     response['Content-Disposition'] = 'attachment; filename= "{}"'.format(sound_id)
     return response
 
@@ -102,8 +128,23 @@ def upload(request):
     file = metadata(user_id=user, title=title, rec_length=length, collection=collection, category=category, tags=tags,
                     fileID=fileID)
     file.save()
+
+	# Start Gcp only upload
+    # meta_obj = metadata.objects.get(fileID=fileID)
+    # storage_bucket = StorageBucket(meta_obj)
+    # storage_bucket.file = request.FILES['blob'].read()
+    # storage_bucket.s_write_file_to_bucket()
+    # del storage_bucket
+    # storage_bucket2 = StorageBucket(meta_obj)
+    # storage_bucket2.s_read_file_from_bucket()
+    # file_rcv = storage_bucket2.file
+	# End Gcp only upload
+
+	# Start Local only upload
     fs = FileSystemStorage()
     fs.save(str(fileID), request.FILES['blob'])
+	# End Local only upload
+
     collections = Collection.objects.all().filter(user_id=user)
     col_name = request.POST.get('collection', 'none')
     names = [collection.name for collection in collections]
