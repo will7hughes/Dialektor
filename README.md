@@ -349,6 +349,6 @@ PostgreSQL Basics: https://www.postgresqltutorial.com/<br>
 
 Deployment Notes
 ============
-If the Kubernetes cluster errors out you may need to re-create it. I had an issue when Kubernetes did an automatic update and I was unable to startup the cluster after the update so I re-created the cluster.
+If the Kubernetes cluster errors out you may need to re-create it. I had an issue when Kubernetes did an automatic update and I was unable to startup the cluster after the update so I re-created the cluster. Also note that this may have been caused by billing being canceled while the cluster is up. We do not know the exact cause.
 
 [Table of Contents](#Dialektor)
