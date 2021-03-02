@@ -46,19 +46,15 @@ def render_sound(request, sound_id):
 
 
 def get_sound(request, sound_id):
-    meta_obj = metadata.objects.get(fileID=sound_id)
-    storage = StorageBucket(meta_obj)
-    storage.s_read_file_from_bucket()
-    file_rcv = storage.file
-    return HttpResponse(file_rcv, content_type='application/force-download')
+	fs = FileSystemStorage()
+    f_data = fs.open(str(sound_id))
+    return HttpResponse(f_data.read(), content_type='application/force-download')
 
 
 def download_sound(request, sound_id):
-    meta_obj = metadata.objects.get(fileID=sound_id)
-    storage = StorageBucket(meta_obj)
-    storage.s_read_file_from_bucket()
-    file_rcv = storage.file
-    response = HttpResponse(file_rcv, content_type='audio/mpeg')
+	fs = FileSystemStorage()
+    f_data = fs.open(str(sound_id))
+    response = HttpResponse(f_data.read(), content_type='audio/mpeg')
     response['Content-Disposition'] = 'attachment; filename= "{}"'.format(sound_id)
     return response
 
@@ -106,14 +102,8 @@ def upload(request):
     file = metadata(user_id=user, title=title, rec_length=length, collection=collection, category=category, tags=tags,
                     fileID=fileID)
     file.save()
-    meta_obj = metadata.objects.get(fileID=fileID)
-    storage_bucket = StorageBucket(meta_obj)
-    storage_bucket.file = request.FILES['blob'].read()
-    storage_bucket.s_write_file_to_bucket()
-    del storage_bucket
-    storage_bucket2 = StorageBucket(meta_obj)
-    storage_bucket2.s_read_file_from_bucket()
-    file_rcv = storage_bucket2.file
+    fs = FileSystemStorage()
+    fs.save(str(fileID), request.FILES['blob'])
     collections = Collection.objects.all().filter(user_id=user)
     col_name = request.POST.get('collection', 'none')
     names = [collection.name for collection in collections]
