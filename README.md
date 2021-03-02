@@ -351,5 +351,9 @@ Deployment Notes
 ============
 If the Kubernetes cluster errors out you may need to re-create it. I had an issue when Kubernetes did an automatic update and I was unable to startup the cluster after the update so I re-created the cluster. Also note that this may have been caused by billing being canceled while the cluster is up. We do not know the exact cause.
 * Also note that you have to do step 1 (a, b) in Set up Cloud SQL from [here](https://cloud.google.com/python/django/kubernetes-engine#linuxmacos_1)
+Useful Commands
+```
+kubectl describe pods
+```
 
 [Table of Contents](#Dialektor)
