@@ -22,11 +22,11 @@ html, body
 #profile
 {
   font-family: 'Cabin', sans-serif;
-  font-size: 2.5vmin;
-  padding-left: 3vmax;
-  padding-right:3vmax;
-  padding-top: 3vmin;
-  padding-bottom: 3vmin;
+  font-size: 2.5;
+  padding-left: 3;
+  padding-right:3;
+  padding-top: 3;
+  padding-bottom: 3;
   background-color: #000;
   color:white;
   width: 10vmin;
@@ -43,11 +43,11 @@ html, body
 #logo
 {
   font-family: 'Cabin', sans-serif;
-  font-size: 2.5vmin;
-  padding-left: 3vmax;
-  padding-right:3vmax;
-  padding-top: 3vmin;
-  padding-bottom: 3vmin;
+  font-size: 2.5;
+  padding-left: 3;
+  padding-right:3;
+  padding-top: 3;
+  padding-bottom: 3;
   background-color: #000;
   color:white;
   width: 10vmin;
@@ -136,9 +136,9 @@ html, body
   width: 5vmin;
   height: 5vmin;
   border-radius: 50%;
-//  background:#cd0000;
+  background:#cd0000;
   background: #fff;
-//  display: none;
+  display: none;
   margin-bottom: 20px;
   margin-left: auto;
 }
