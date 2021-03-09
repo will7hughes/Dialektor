@@ -21,15 +21,9 @@ html, body
 }
 #profile
 {
-  font-family: 'Cabin', sans-serif;
-  font-size: 2.5vmin;
-  padding-left: 3vmax;
-  padding-right:3vmax;
-  padding-top: 3vmin;
-  padding-bottom: 3vmin;
+  font-family: "Cabin", sans-serif;
   background-color: #000;
   color:white;
-  width: 10vmin;
   text-align: center;
   display: inline-block;
   float: right;
@@ -42,15 +36,9 @@ html, body
 
 #logo
 {
-  font-family: 'Cabin', sans-serif;
-  font-size: 2.5vmin;
-  padding-left: 3vmax;
-  padding-right:3vmax;
-  padding-top: 3vmin;
-  padding-bottom: 3vmin;
+  font-family: "Cabin", sans-serif;
   background-color: #000;
   color:white;
-  width: 10vmin;
   text-align: center;
   display: inline-block;
   float: left;
@@ -136,9 +124,9 @@ html, body
   width: 5vmin;
   height: 5vmin;
   border-radius: 50%;
-//  background:#cd0000;
+  background:#cd0000;
   background: #fff;
-//  display: none;
+  display: none;
   margin-bottom: 20px;
   margin-left: auto;
 }
