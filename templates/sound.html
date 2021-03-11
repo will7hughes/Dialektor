@@ -2,7 +2,9 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 
-<script src="{% static "js/DialektPlayback.js" %}"></script>
+{% load  static %}
+<script src="{% static 'js/DialektPlayback.js' %}"></script>
+
 <div id="content">
   <div class="sound-detail">
     <div id="pic-box">

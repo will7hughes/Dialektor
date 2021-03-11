@@ -5,7 +5,7 @@ from .views import (
 	index_home,
 	signup, 
 	login_user,
-	create_user
+	create_user,
 )
 urlpatterns = [
     path('', index_home, name='home'),

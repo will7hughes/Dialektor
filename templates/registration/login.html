@@ -3,22 +3,15 @@
 {% block title %}Login{% endblock %}
 {% block content %}
 
-
-
+<center>
 <div class="login_container">
   <p>Login</p>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <div class="d-grid gap-2 d-md-block">
-      <button type = "submit" class = "btn btn-primary" type="button">Login</button>
-      <a class="btn btn-primary" href="\signup" role="button">Don't have an account? Sign up now!</a>
-    </div>
+    <br><button type="submit" class="btn btn-dark">Login</button><br>
+    <a href="/signup"> Don't have an account? Signup!</a>
   </form>
 </div>
-
-
+</center>
 {% endblock %}
-
-
-
