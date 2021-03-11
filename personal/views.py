@@ -16,7 +16,8 @@ from django.db.models import Q
 import operator
 from functools import reduce
 from datetime import datetime
-
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
 
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
@@ -93,39 +94,43 @@ def create_user(request):
 
 
 def upload(request):
-    print(request.POST)
-    print(request.FILES)
-    print(request.user.user_id)
-    title = request.POST.get('title', 'none')
-    collection = request.POST.get('collection', 'none')
-    category = request.POST.get('category', 'none')
-    tags = request.POST.get('tags', 'none')
-    length = request.POST.get('length', 'none')
-    user = request.user.user_id
-    fileID = hash_object = hashlib.md5(str.encode(title + user + collection)).hexdigest()
-    file = metadata(user_id=user, title=title, rec_length=length, collection=collection, category=category, tags=tags,
-                    fileID=fileID)
-    file.save()
-    meta_obj = metadata.objects.get(fileID=fileID)
-    storage_bucket = StorageBucket(meta_obj)
-    storage_bucket.file = request.FILES['blob'].read()
-    storage_bucket.s_write_file_to_bucket()
-    del storage_bucket
-    storage_bucket2 = StorageBucket(meta_obj)
-    storage_bucket2.s_read_file_from_bucket()
-    file_rcv = storage_bucket2.file
-    collections = Collection.objects.all().filter(user_id=user)
-    col_name = request.POST.get('collection', 'none')
-    names = [collection.name for collection in collections]
-    if col_name not in names:
-        pic_id = hashlib.md5(str.encode(col_name + user)).hexdigest()
-        c = Collection(user_id=user, name=request.POST.get('collection', 'none'), pic_id=pic_id)
-        c.save()
-        collection_pic = request.FILES.get('collection-pic', None)
-        if collection_pic is not None:
-            collection_pic.name = pic_id
-            StorageBucket.write_file_to_storage(pic_id, collection_pic)
-    return HttpResponse(fileID)
+	print("Hello")
+	title = request.POST.get('title', 'none')
+	collection = request.POST.get('collection', 'none')
+	category = request.POST.get('category', 'none')
+	tags = request.POST.get('tags', 'none')
+	length = request.POST.get('length', 'none')
+	user = request.user.user_id
+	fileID = hash_object = hashlib.md5(str.encode(title + user + collection)).hexdigest()
+	file = metadata(user_id=user, title=title, rec_length=length, collection=collection, category=category, tags=tags,
+					fileID=fileID)
+	file.save()
+	
+	if (settings.PRODUCTION == False):
+		fs = FileSystemStorage()
+		fs.save(str(fileID), request.FILES['blob'])
+	else:
+		meta_obj = metadata.objects.get(fileID=fileID)
+		storage_bucket = StorageBucket(meta_obj)
+		storage_bucket.file = request.FILES['blob'].read()
+		storage_bucket.s_write_file_to_bucket()
+		del storage_bucket
+		storage_bucket2 = StorageBucket(meta_obj)
+		storage_bucket2.s_read_file_from_bucket()
+		file_rcv = storage_bucket2.file
+
+	collections = Collection.objects.all().filter(user_id=user)
+	col_name = request.POST.get('collection', 'none')
+	names = [collection.name for collection in collections]
+	if col_name not in names:
+		pic_id = hashlib.md5(str.encode(col_name + user)).hexdigest()
+		c = Collection(user_id=user, name=request.POST.get('collection', 'none'), pic_id=pic_id)
+		c.save()
+		collection_pic = request.FILES.get('collection-pic', None)
+		if collection_pic is not None:
+			collection_pic.name = pic_id
+			StorageBucket.write_file_to_storage(pic_id, collection_pic)
+	return HttpResponse(fileID)
 
 
 def signup(request):
