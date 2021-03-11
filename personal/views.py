@@ -47,11 +47,16 @@ def render_sound(request, sound_id):
 
 
 def get_sound(request, sound_id):
-    meta_obj = metadata.objects.get(fileID=sound_id)
-    storage = StorageBucket(meta_obj)
-    storage.s_read_file_from_bucket()
-    file_rcv = storage.file
-    return HttpResponse(file_rcv, content_type='application/force-download')
+	if (settings.PRODUCTION == False):
+		fs = FileSystemStorage()
+		f_data = fs.open(str(sound_id))
+		return HttpResponse(f_data.read(), content_type='application/force-download')
+	else:
+		meta_obj = metadata.objects.get(fileID=sound_id)
+		storage = StorageBucket(meta_obj)
+		storage.s_read_file_from_bucket()
+		file_rcv = storage.file
+		return HttpResponse(file_rcv, content_type='application/force-download')
 
 
 def download_sound(request, sound_id):
