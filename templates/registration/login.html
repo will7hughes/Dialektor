@@ -1,8 +1,6 @@
 <!-- templates/registration/login.html -->
-{% extends 'base.html' %}
-
+ {% extends 'base.html' %}
 {% block title %}Login{% endblock %}
-
 {% block content %}
 
 <center>
@@ -11,8 +9,10 @@
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <br><button type="submit" class="btn btn-dark">Login</button><br>
-    <a href="/signup"> Don't have an account? Signup!</a>
+      <br>
+      <button type="submit" class="btn btn-dark">Login</button><br>
+      <br>
+      <a href="/signup" class = "btn btn-dark"> Don't have an account? Signup!</a> 
   </form>
 </div>
 </center>
