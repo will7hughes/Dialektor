@@ -58,7 +58,6 @@ def get_sound(request, sound_id):
 		file_rcv = storage.file
 		return HttpResponse(file_rcv, content_type='application/force-download')
 
-
 def download_sound(request, sound_id):
     meta_obj = metadata.objects.get(fileID=sound_id)
     storage = StorageBucket(meta_obj)
@@ -67,7 +66,6 @@ def download_sound(request, sound_id):
     response = HttpResponse(file_rcv, content_type='audio/mpeg')
     response['Content-Disposition'] = 'attachment; filename= "{}"'.format(sound_id)
     return response
-
 
 def get_picture(request, pic_id):
     try:

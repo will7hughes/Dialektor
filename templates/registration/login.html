@@ -6,9 +6,30 @@
 <center>
 <div class="login_container">
   <p>Login</p>
+  <!-- <form method="post">
+    <input type="hidden" name="csrfmiddlewaretoken" value="2AZAiSs0H4TQoBj9LEhP0kTYGToFG930X022OZlw2X1u1FbMzW0mDv8mVPEsKbvJ">
+    <p>
+		<label for="id_username">Username:</label> 
+		<input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+	</p>
+<p><label for="id_password">Password:</label> <input type="password" name="password" autocomplete="current-password" required="" id="id_password"></p>
+      <br>
+      <button type="submit" class="btn btn-dark">Login</button><br>
+      <br>
+      <a href="/signup" class="btn btn-dark"> Don't have an account? Signup!</a> 
+  </form> -->
+
   <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
+	<p>
+		<input type="input" class="form-control" name="username" id="inputEmail" placeholder="Username" required >
+        {{ form.username.errors }}
+	</p>
+	<p>
+		<input type="password" class="form-control" name="password" id="inputPass" placeholder="Password" required>
+        {{ form.password.errors }}
+	</p>
+
       <br>
       <button type="submit" class="btn btn-dark">Login</button><br>
       <br>
