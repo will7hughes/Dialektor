@@ -135,10 +135,10 @@ html, body
 {
   width: 5vmin;
   height: 5vmin;
-  border-radius: 50%;
-//  background:#cd0000;
+  border-radius: 50%;  
+  background:#cd0000;
   background: #fff;
-//  display: none;
+  display: none;
   margin-bottom: 20px;
   margin-left: auto;
 }
@@ -373,8 +373,8 @@ input[type=submit]
 
 a{
   color: inherit; /* usual colors for links too */
-  text-decoration: inherit; /* no underline */
   font-family: 'Cabin', sans-serif;
+  text-decoration: none;
   font-size: 3.0vh;
 }
 #pic-box

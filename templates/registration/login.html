@@ -1,17 +1,24 @@
 <!-- templates/registration/login.html -->
-{% extends 'base.html' %}
-
+ {% extends 'base.html' %}
 {% block title %}Login{% endblock %}
-
 {% block content %}
+
+
+
 <div class="login_container">
   <p>Login</p>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Login</button>
-    <a href="/signup"> Don't have an account? Signup!</a>
+    <div class="d-grid gap-2 d-md-block">
+      <button type = "submit" class = "btn btn-primary" type="button">Login</button>
+      <a class="btn btn-primary" href="\signup" role="button">Don't have an account? Sign up now!</a>
+    </div>
   </form>
 </div>
 
+
 {% endblock %}
+
+
+
