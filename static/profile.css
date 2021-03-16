@@ -7,11 +7,10 @@ html, body {
 }
 
 .grid-item {
-  height: 13vw;
-  width: 13vw;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9);
-  margin: 5px;
+  align-items: center;
+  outline: 1px double black;
   cursor: pointer;
+  margin: 3px;
 
 }
 .grid-item:hover {
@@ -28,7 +27,9 @@ html, body {
 }
 .flex-direction-horizontal {
     flex-direction: row;
+    align-items: center;
 }
+
 
 /* Can possibly delete this, makes user card larger */
 #userinfo-flexcontainer img{
@@ -89,12 +90,9 @@ html, body {
  /* Zachs stuff */
   #profile
 {
-  font-family: 'Cabin', sans-serif;
-  font-size: 28px;
-  padding: 20px;
+  font-family: "Cabin", sans-serif;
   background-color: #000;
   color:white;
-  width: 150px;
   text-align: center;
   display: inline-block;
   float: right;
@@ -102,12 +100,9 @@ html, body {
 
 #logo
 {
-  font-family: 'Cabin', sans-serif;
-  font-size: 28px;
-  padding: 20px;
+  font-family: "Cabin", sans-serif;
   background-color: #000;
   color:white;
-  width: 150px;
   text-align: center;
   display: inline-block;
   float: left;
