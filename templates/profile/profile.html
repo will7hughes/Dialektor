@@ -24,47 +24,48 @@
 </div>
 <br><br>
 <h2><center>Recent Sounds</center></h2>
-<div class="fluid-container">
-        <div class="row">
-            {% for record_id, data in user_records.items %}
-            <div class="card" id="recent-sounds">
-                <div class="card-body">
-                    <a href="/sounds/{{record_id}}">
-                        <h1 class="card-title">{{data.title}}</h1>
-                        <p class="card-text">{{data.date}}</p>
-                        <p class="card-text">Collection: {{data.collection}}</p>
-                    </a>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-</div>
-<!-- The django for loops to generate all of the sounds will go inside this div -->
+<div class="px-4">
+	<div class="row row-cols-1 row-cols-md-5 g-4">
 
+		{% for record_id, data in user_records.items %}
+		<div class="col">
+
+			<div class="card" id="recent-sounds">
+				<div class="card-body">
+					<a href="/sounds/{{record_id}}">
+						<h1 class="card-title">{{data.title}}</h1>
+						<p class="card-text">{{data.date}}</p>
+						<p class="card-text">Collection: {{data.collection}}</p>
+					</a>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+		
 <br>
 <h2><center>My Collections</center></h2>
 <br>
 <!-- The django for loops to generate all of the collections will go inside this div, in a seperate div -->
-<div class="fluid-container" id="collections">
-	<div class="row">
-		
-			{% for collection_name, data in user_collections.items %}
-			<div class="card" id="recent-sounds">
-				<div class="card-body">
-					<a href="/collection/{{ collection_name }}">
-						<h1 class="card-title">{{collection_name}}</h1>
-					</a>
-				</div>
+	<div class="card-group">
+	
+		{% for collection_name, data in user_collections.items %}
+		<div class="card" id="recent-sounds">
+			<div class="card-body">
+				<a href="/collection/{{ collection_name }}">
+					<h1 class="card-title">{{collection_name}}</h1>
+				</a>
 			</div>
-			{% endfor %}
+		</div>
+		{% endfor %}
 	</div>
-</div>
 
 <br>
 <h2><center>Tags</center></h2>
 <!-- The django for loops to generate all of the tags will go inside this div -->
-<div class="fluid-container">
-    <div class="row">
+<div class="card-group">
+
         {% for tag_name, data in user_tags.items %}
         <div class="card">
             <div class="card-body">
@@ -72,8 +73,9 @@
             </div>
         </div>
         {% endfor %}
-    </div>
-</div>
+	</div>
+<!-- The django for loops to generate all of the sounds will go inside this div -->
+
 
 
 {% else %}
