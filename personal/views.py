@@ -43,7 +43,7 @@ def render_sound(request, sound_id):
     collection = Collection.objects.get(user_id=sound.user_id, name=sound.collection)
     print(sound.title)
     return render(request, 'sound.html',
-                  {'sound': sound_id, 'title': sound.title, 'author': user.username, 'pic_src': collection.pic_id})
+                  {'sound': sound_id, 'title': sound.title, 'author': user.username, 'collectionname': collection.name})
 
 
 def get_sound(request, sound_id):

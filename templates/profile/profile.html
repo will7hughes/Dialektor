@@ -26,22 +26,26 @@
 <h2><center>Recent Sounds</center></h2>
 <div class="px-4">
 	<div class="row row-cols-1 row-cols-md-5 g-4">
+
 		{% for record_id, data in user_records.items %}
-			{% if forloop.counter <= 10 %}
-			<div class="col">
-				<div class="card" id="recent-sounds">
-					<div class="card-body">
-						<a href="/sounds/{{record_id}}">
-							<h1 class="card-title">{{data.title}}</h1>
-							<p class="card-text">{{data.date}}</p>
-							<p class="card-text">Collection: {{data.collection}}</p>
-						</a>
-					</div>
+		{% if forloop.counter <= 10 %}
+		<div class="col">
+
+			<div class="card" id="recent-sounds">
+				<div class="card-body">
+					<a href="/sounds/{{record_id}}" class="text-decoration-none text-dark">
+						<h1 class="card-title" class="text-decoration-none text-dark">{{data.title}}</h1>
+						<p class="card-text" class="text-decoration-none text-dark">{{data.date}}</p>
+						<p class="card-text" class="text-decoration-none text-dark">Collection: {{data.collection}}</p>
+					</a>
 				</div>
 			</div>
-			{% endif %}
+		</div>
+		{% endif %}
 		{% endfor %}
 	</div>
+
+		
 <br>
 <h2><center>My Collections</center></h2>
 <br>
@@ -51,8 +55,8 @@
 		{% for collection_name, data in user_collections.items %}
 		<div class="card" id="recent-sounds">
 			<div class="card-body">
-				<a href="/collection/{{ collection_name }}">
-					<h1 class="card-title">{{collection_name}}</h1>
+				<a href="/collection/{{ collection_name }}" class="text-decoration-none text-dark" >
+					<h1 class="card-title" class="text-decoration-none text-dark" >{{collection_name}}</h1>
 				</a>
 			</div>
 		</div>
@@ -67,7 +71,7 @@
         {% for tag_name, data in user_tags.items %}
         <div class="card">
             <div class="card-body">
-                <a href="/tag/{{ tag_name }}" style="cursor: pointer">#{{ tag_name }} </a>
+                <a href="/tag/{{ tag_name }}" class="text-decoration-none text-dark" style="cursor: pointer">#{{ tag_name }} </a>
             </div>
         </div>
         {% endfor %}
