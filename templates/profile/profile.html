@@ -28,6 +28,7 @@
 	<div class="row row-cols-1 row-cols-md-5 g-4">
 
 		{% for record_id, data in user_records.items %}
+		{% if forloop.counter <= 10 %}
 		<div class="col">
 
 			<div class="card" id="recent-sounds">
@@ -40,6 +41,7 @@
 				</div>
 			</div>
 		</div>
+		{% endif %}
 		{% endfor %}
 	</div>
 
