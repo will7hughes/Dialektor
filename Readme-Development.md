@@ -355,5 +355,8 @@ Useful Commands
 ```
 kubectl describe pods
 ```
+Project Estimation
+============
+We are approximately 95% done with the project, the final 5% will be us touching up the application. But other than that, the application looks better than its original counterpart on mobile. 
 
 [Table of Contents](#Dialektor)
