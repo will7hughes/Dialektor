@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<link rel="stylesheet" type="text/css" href="/static/profile.css">
+<!-- This is the top level container, it holds all of the page contents below the nav bar.
+        This is a flex container with vertical flex-direction, it is also a flex item to its parent  -->
+        <div class="flex-container flex-direction-vertical" id="top-level-flexcontainer">
+            <!-- Flex container holding the user information, which are flex items. Has a horizontal flex-direction
+            it is also a flex item to its parent container #top-level-flexcontainer  -->
+            <div class="flex-container flex-direction-horizontal" id="userinfo-flexcontainer">
+                <div class="card">
+                    <p>Tag</p>
+                    <h2>#{{ tag_name }}</h2>
+                </div>
+
+            </div>
+
+        </div>
+        <br><br>
+        <center><h1>Sounds with tag #{{ tag_name}}</h1></center>
+        <!-- The django for loops to generate all of the sounds will go inside this div -->
+        <div class="fluid-container">
+          <div class="row">
+              {% for record_id, data in user_records.items %}
+              <div class="card" id="recent-sounds">
+                  <div class="card-body">
+                      <a href="/sounds/{{record_id}}" class="text-decoration-none text-dark">
+                          <h1 class="card-title">{{data.title}}</h1>
+                          <p class="card-text">{{data.date}}</p>
+                          <p class="card-text">Collection: {{data.collection}}</p>
+                      </a>
+                  </div>
+              </div>
+              {% endfor %}
+          </div>
+  </div>
+{% else %}
+  {% include "/templates/registration/YouAreNotLoggedIn.html" %}
+{% endif %}
+{% endblock %}

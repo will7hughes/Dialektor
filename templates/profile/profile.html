@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<link rel="stylesheet" type="text/css" href="/static/profile.css">
+<!-- This is the top level container, it holds all of the page contents below the nav bar.
+        This is a flex container with vertical flex-direction, it is also a flex item to its parent  -->
+<div class="flex-container flex-direction-vertical" id="top-level-flexcontainer">
+    <!-- Flex container holding the user information, which are flex items. Has a horizontal flex-direction
+            it is also a flex item to its parent container #top-level-flexcontainer  -->
+    <div class="flex-container flex-direction-horizontal" id="userinfo-flexcontainer">
+        <div class="card">
+            <img src="/profilePic/" alt="{{user.first_name}}" style="width:50%">
+            <h1>{{user.username}}</h1>
+            <p>{{user.first_name}} {{user.last_name}}</p>
+            <p class="Account type">{{user.email}}</p>
+            <p>personal account</p>
+            <a href="/userUpdateProfile"><button type="button" class="btn btn-dark">Edit Profile</button></a>
+            <a href="/accounts/logout"><button type="button" class="btn btn-dark">Logout</button></a>
+        </div>
+
+    </div>
+
+</div>
+<br><br>
+<h2><center>Recent Sounds</center></h2>
+<div class="d-inline-flex p-2" id="recent-sounds">
+		{% for record_id, data in user_records.items %}
+		{% if forloop.counter <= 10 %}
+			<div class="card" id="recent-sounds">
+				<div class="card-body">
+					<a href="/sounds/{{record_id}}" class="text-decoration-none text-dark">
+						<h1 class="card-title" class="text-decoration-none text-dark">{{data.title}}</h1>
+						<p class="card-text" class="text-decoration-none text-dark">{{data.date}}</p>
+						<p class="card-text" class="text-decoration-none text-dark">Collection: {{data.collection}}</p>
+					</a>
+				</div>
+			</div>
+		{% endif %}
+		{% endfor %}
+	</div>
+</div>
+		
+<br>
+<h2><center>My Collections</center></h2>
+<br>
+<!-- The django for loops to generate all of the collections will go inside this div, in a seperate div -->
+	
+		{% for collection_name, data in user_collections.items %}
+		<div class="card" id="recent-sounds">
+			<div class="card-body">
+				<a href="/collection/{{ collection_name }}" class="text-decoration-none text-dark" >
+					<h1 class="card-title" class="text-decoration-none text-dark" >{{collection_name}}</h1>
+				</a>
+			</div>
+		</div>
+		{% endfor %}
+
+
+<br>
+<h2><center>Tags</center></h2>
+<!-- The django for loops to generate all of the tags will go inside this div -->
+
+        {% for tag_name, data in user_tags.items %}
+        <div class="card">
+            <div class="card-body">
+                <a href="/tag/{{ tag_name }}" class="text-decoration-none text-dark" style="cursor: pointer">#{{ tag_name }} </a>
+            </div>
+        </div>
+        {% endfor %}
+	</div>
+
+<!-- The django for loops to generate all of the sounds will go inside this div -->
+
+
+
+{% else %}
+{% include "/templates/registration/YouAreNotLoggedIn.html" %}
+{% endif %}
+{% endblock %}
